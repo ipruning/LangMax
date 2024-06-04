@@ -1,0 +1,24 @@
+default_install_hook_types: [pre-commit, commit-msg, pre-push]
+default_stages: [commit, push]
+repos:
+  - repo: local
+    hooks:
+      - id: format
+        name: format using ruff
+        entry: ruff format
+        language: python
+        types: [python]
+        language_version: python3
+        minimum_pre_commit_version: "3.7.1"
+      - id: commitizen
+        name: check commit-msg using commitizen
+        description: >
+          Check whether the current commit message follows committing rules. Allow
+          empty commit messages by default, because they typically indicate to Git
+          that the commit should be aborted.
+        entry: cz check
+        args: [--allow-abort, --commit-msg-file]
+        stages: [commit-msg]
+        language: python
+        language_version: python3
+        minimum_pre_commit_version: "3.7.1"

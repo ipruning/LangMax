@@ -160,11 +160,11 @@ cython_debug/
 .idea/
 
 # Custom
+.ruff_cache/
 TODO/
+data/
 llms/
 scripts/24q1/chatgpt-api-by-browser-script/
 wandb/
-private.env
-data/
-.ruff_cache/
 *.excalidraw.json
+*.private.env

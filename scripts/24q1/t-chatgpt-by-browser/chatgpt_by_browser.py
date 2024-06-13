@@ -1,9 +1,7 @@
 import requests
 
 
-def query_model(
-    messages, model="gpt-4", new_chat=True, temperature=0.7, max_tokens=150
-):
+def query_model(messages, model="gpt-4", new_chat=True, temperature=0.7, max_tokens=150):
     """
     Queries the model via the API and returns the response.
 

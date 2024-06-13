@@ -128,15 +128,11 @@ class Conversation:
                             if width == height:
                                 return pil_img
                             elif width > height:
-                                result = Image.new(
-                                    pil_img.mode, (width, width), background_color
-                                )
+                                result = Image.new(pil_img.mode, (width, width), background_color)
                                 result.paste(pil_img, (0, (width - height) // 2))
                                 return result
                             else:
-                                result = Image.new(
-                                    pil_img.mode, (height, height), background_color
-                                )
+                                result = Image.new(pil_img.mode, (height, height), background_color)
                                 result.paste(pil_img, ((height - width) // 2, 0))
                                 return result
 
@@ -146,9 +142,7 @@ class Conversation:
                     elif image_process_mode == "Resize":
                         image = image.resize((336, 336))
                     else:
-                        raise ValueError(
-                            f"Invalid image_process_mode: {image_process_mode}"
-                        )
+                        raise ValueError(f"Invalid image_process_mode: {image_process_mode}")
                     max_hw, min_hw = max(image.size), min(image.size)
                     aspect_ratio = max_hw / min_hw
                     max_len, min_len = 800, 400
@@ -187,9 +181,7 @@ class Conversation:
             return {
                 "system": self.system,
                 "roles": self.roles,
-                "messages": [
-                    [x, y[0] if type(y) is tuple else y] for x, y in self.messages
-                ],
+                "messages": [[x, y[0] if type(y) is tuple else y] for x, y in self.messages],
                 "offset": self.offset,
                 "sep": self.sep,
                 "sep2": self.sep2,
@@ -253,13 +245,9 @@ async def request(conversation: Conversation, settings):
                         if data["error_code"] == 0:
                             output = data["text"][len(pload["prompt"]) :].strip()
                             conversation.messages[-1][-1] = output + "▌"
-                            await chainlit_message.stream_token(
-                                output, is_sequence=True
-                            )
+                            await chainlit_message.stream_token(output, is_sequence=True)
                         else:
-                            output = (
-                                data["text"] + f" (error_code: {data['error_code']})"
-                            )
+                            output = data["text"] + f" (error_code: {data['error_code']})"
                             conversation.messages[-1][-1] = output
                             chainlit_message.content = output
             await chainlit_message.send()
@@ -317,11 +305,7 @@ async def setup_agent(settings):
 @cl.on_message
 async def main(message: cl.Message):
     image = next(
-        (
-            Image.open(file.path)
-            for file in message.elements or []
-            if "image" in file.mime and file.path is not None
-        ),
+        (Image.open(file.path) for file in message.elements or [] if "image" in file.mime and file.path is not None),
         None,
     )
 

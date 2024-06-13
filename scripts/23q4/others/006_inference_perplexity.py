@@ -16,10 +16,7 @@ messages = [
     },
     {
         "role": "user",
-        "content": (
-            "Count to 100, with a comma between each number and no newlines. "
-            "E.g., 1, 2, 3, ..."
-        ),
+        "content": ("Count to 100, with a comma between each number and no newlines. " "E.g., 1, 2, 3, ..."),
     },
 ]
 

@@ -5,11 +5,7 @@ from IPython.display import HTML, display
 import numpy as np
 from openai import OpenAI
 
-client = OpenAI(
-    api_key=os.environ.get(
-        "OPENAI_API_KEY", "<your OpenAI API key if not set as env var>"
-    )
-)
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "<your OpenAI API key if not set as env var>"))
 
 
 def get_completion(

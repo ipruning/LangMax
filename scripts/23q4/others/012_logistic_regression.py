@@ -43,7 +43,4 @@ final_preds = (X @ w) > 0
 acc = mx.mean(final_preds == y)
 
 throughput = num_iters / (toc - tic)
-print(
-    f"Loss {loss.item():.5f}, Accuracy {acc.item():.5f} "
-    f"Throughput {throughput:.5f} (it/s)"
-)
+print(f"Loss {loss.item():.5f}, Accuracy {acc.item():.5f} " f"Throughput {throughput:.5f} (it/s)")

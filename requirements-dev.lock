@@ -87,12 +87,15 @@ beautifulsoup4==4.12.3
 bidict==0.23.1
     # via python-socketio
 black==24.4.2
+    # via bm25s
     # via marimo
 bleach==6.1.0
     # via nbconvert
 blinker==1.8.2
     # via flask
     # via streamlit
+bm25s==0.1.3
+    # via langmax
 build==1.2.1
     # via chromadb
     # via poetry
@@ -298,6 +301,7 @@ httpx==0.27.0
     # via replicate
 huggingface-hub==0.23.2
     # via accelerate
+    # via bm25s
     # via datasets
     # via gradio
     # via gradio-client
@@ -346,6 +350,10 @@ itsdangerous==2.2.0
     # via marimo
 jaraco-classes==3.4.0
     # via keyring
+jax==0.4.30
+    # via bm25s
+jaxlib==0.4.30
+    # via jax
 jedi==0.19.1
     # via ipython
     # via marimo
@@ -540,6 +548,9 @@ mdurl==0.1.2
     # via markdown-it-py
 mistune==3.0.2
     # via nbconvert
+ml-dtypes==0.4.0
+    # via jax
+    # via jaxlib
 mlx==0.15.0
     # via langmax
     # via mlx-lm
@@ -599,12 +610,15 @@ nox==2024.4.15
 numpy==1.26.4
     # via accelerate
     # via altair
+    # via bm25s
     # via chroma-hnswlib
     # via chromadb
     # via contourpy
     # via datasets
     # via gradio
     # via great-tables
+    # via jax
+    # via jaxlib
     # via langchain
     # via langchain-community
     # via langmax
@@ -613,13 +627,16 @@ numpy==1.26.4
     # via llama-index-legacy
     # via lmql
     # via matplotlib
+    # via ml-dtypes
     # via mlx-lm
     # via onnxruntime
+    # via opt-einsum
     # via optuna
     # via pandas
     # via pyarrow
     # via pydeck
     # via ragas
+    # via scipy
     # via sglang
     # via streamlit
     # via transformers
@@ -686,6 +703,8 @@ opentelemetry-semantic-conventions==0.45b0
 opentelemetry-util-http==0.45b0
     # via opentelemetry-instrumentation-asgi
     # via opentelemetry-instrumentation-fastapi
+opt-einsum==3.3.0
+    # via jax
 optuna==3.6.1
     # via dspy-ai
 orjson==3.10.3
@@ -773,6 +792,8 @@ poetry-plugin-dotenv==0.6.33
     # via parea-ai
 poetry-plugin-export==1.8.0
     # via poetry
+polars==0.20.31
+    # via langmax
 portkey-ai==1.4.0
     # via langmax
 posthog==3.5.0
@@ -862,6 +883,8 @@ pyproject-hooks==1.1.0
 pysbd==0.3.4
     # via parea-ai
     # via ragas
+pystemmer==2.2.0.1
+    # via bm25s
 pytest==8.2.1
     # via pytest-cov
 pytest-cov==5.0.0
@@ -927,7 +950,7 @@ qtpy==2.4.1
     # via qtconsole
 questionary==2.0.1
     # via commitizen
-ragas @ git+https://github.com/explodinggradients/ragas@9e4ef852ed80b7e0eb3dd584dfe05da930304d06
+ragas @ git+https://github.com/explodinggradients/ragas@9bc6e6fd44180e658751e15da3a3829c957ee853
     # via langmax
 rapidfuzz==3.9.2
     # via cleo
@@ -992,6 +1015,10 @@ ruff==0.4.6
 safetensors==0.4.3
     # via accelerate
     # via transformers
+scipy==1.13.1
+    # via bm25s
+    # via jax
+    # via jaxlib
 semantic-version==2.10.0
     # via gradio
 send2trash==1.8.3
@@ -1120,6 +1147,7 @@ tornado==6.4
     # via streamlit
     # via terminado
 tqdm==4.66.4
+    # via bm25s
     # via chromadb
     # via datasets
     # via dspy-ai
@@ -1189,6 +1217,7 @@ typing-inspect==0.9.0
 tzdata==2024.1
     # via pandas
 ujson==5.10.0
+    # via bm25s
     # via dspy-ai
 uptrace==1.24.0
     # via chainlit

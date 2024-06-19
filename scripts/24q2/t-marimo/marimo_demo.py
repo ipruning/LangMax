@@ -1,5 +1,6 @@
 import marimo
 
+__generated_with = "0.6.19"
 app = marimo.App(width="medium")
 
 
@@ -11,7 +12,7 @@ def __():
 
 @app.cell
 def __():
-    3 + 3
+    1 + 2
     return
 
 

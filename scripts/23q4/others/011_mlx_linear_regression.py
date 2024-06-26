@@ -37,7 +37,7 @@ for _ in range(num_iters):
 toc = time.time()
 
 loss = loss_fn(w)
-error_norm = mx.sum(mx.square(w - w_star)).item() ** 0.5
+error_norm = mx.sum(mx.square(w - w_star)).item() ** 0.5  # type: ignore
 throughput = num_iters / (toc - tic)
 
 print(f"Loss {loss.item():.5f}, |w-w*| = {error_norm:.5f}, " f"Throughput {throughput:.5f} (it/s)")

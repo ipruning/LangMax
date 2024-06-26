@@ -19,4 +19,4 @@ message = client.messages.create(
     messages=[{"role": "user", "content": "How are you today?"}],
 )
 
-print(message.content[0].text)
+print(message.content)

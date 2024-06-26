@@ -4,6 +4,6 @@ beam(n=3)
     English: [TRANSLATION]
     """
 from 
-    lmql.model("local:llama.cpp:/Users/alex/.cache/lm-studio/models/NousResearch/Hermes-2-Pro-Mistral-7B-GGUF/Hermes-2-Pro-Mistral-7B.Q4_0.gguf", tokenizer="NousResearch/Hermes-2-Pro-Mistral-7B")
+    lmql.model("local:llama.cpp:/Users/alex/Databases/Models/lm-studio/models/lmstudio-community/DeepSeek-Coder-V2-Lite-Instruct-Q4_K_M.gguf")
 where
     STOPS_AT(TRANSLATION, "\n")

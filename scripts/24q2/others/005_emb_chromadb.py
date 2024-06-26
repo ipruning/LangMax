@@ -25,6 +25,6 @@ prompt = "What animals are llamas related to?"
 # generate an embedding for the prompt and retrieve the most relevant doc
 response = ollama.embeddings(prompt=prompt, model="chatfire/bge-m3:q8_0")
 results = collection.query(query_embeddings=[response["embedding"]], n_results=1)
-data = results["documents"][0][0]
+data = results["documents"][0][0]  # type: ignore
 
 print(data)

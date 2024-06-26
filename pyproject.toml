@@ -12,6 +12,7 @@
         "autocorrect-py>=2.9.0",
         "banks>=0.4.1",
         "bm25s[full]>=0.1.7",
+        "chromadb>=0.5.3",
         "controlflow>=0.8.1",
         "dspy-ai>=2.4.10",
         "einops>=0.8.0",

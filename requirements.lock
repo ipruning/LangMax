@@ -17,7 +17,6 @@ aiohttp==3.9.5
     # via datasets
     # via fsspec
     # via langchain
-    # via langchain-community
     # via litellm
     # via llama-index-core
     # via llama-index-legacy
@@ -39,16 +38,16 @@ annotated-types==0.7.0
     # via pydantic
 anthropic==0.29.0
     # via langchain-anthropic
+    # via langmax
 anyio==4.4.0
     # via anthropic
     # via httpx
     # via jupyter-server
     # via openai
     # via prefect
+    # via sse-starlette
     # via starlette
     # via watchfiles
-appdirs==1.4.4
-    # via ragas
 appnope==0.1.4
     # via ipykernel
 apprise==1.8.0
@@ -162,12 +161,10 @@ cryptography==42.0.8
 cycler==0.12.1
     # via matplotlib
 dataclasses-json==0.5.14
-    # via langchain-community
     # via llama-index-core
     # via llama-index-legacy
 datasets==2.14.7
     # via dspy-ai
-    # via ragas
 dateparser==1.2.0
     # via prefect
 debugpy==1.8.1
@@ -186,6 +183,8 @@ dill==0.3.7
 dirtyjson==1.0.8
     # via llama-index-core
     # via llama-index-legacy
+diskcache==5.6.3
+    # via llama-cpp-python
 distlib==0.3.8
     # via virtualenv
 distro==1.9.0
@@ -213,6 +212,7 @@ executing==2.0.1
     # via stack-data
 fastapi==0.111.0
     # via gradio
+    # via llama-cpp-python
     # via modal
     # via prefect
 fastapi-cli==0.0.4
@@ -363,6 +363,7 @@ jinja2==3.1.4
     # via jupyterlab-server
     # via langmax
     # via litellm
+    # via llama-cpp-python
     # via mlx-lm
     # via nbconvert
     # via prefect
@@ -437,31 +438,23 @@ keyring==24.3.1
 kiwisolver==1.4.5
     # via matplotlib
 langchain==0.2.6
-    # via langchain-community
     # via langmax
-    # via ragas
 langchain-anthropic==0.1.15
     # via controlflow
-langchain-community==0.2.1
-    # via ragas
 langchain-core==0.2.10
     # via controlflow
     # via langchain
     # via langchain-anthropic
-    # via langchain-community
     # via langchain-openai
     # via langchain-text-splitters
-    # via ragas
 langchain-openai==0.1.8
     # via controlflow
-    # via ragas
 langchain-text-splitters==0.2.0
     # via langchain
 langdetect==1.0.9
     # via langmax
 langsmith==0.1.81
     # via langchain
-    # via langchain-community
     # via langchain-core
 levenshtein==0.25.1
     # via parea-ai
@@ -473,6 +466,8 @@ litellm==1.40.27
 llama-cloud==0.0.6
     # via llama-index-core
     # via llama-index-indices-managed-llama-cloud
+llama-cpp-python==0.2.79
+    # via langmax
 llama-index==0.10.50
     # via langmax
 llama-index-agent-openai==0.2.6
@@ -593,7 +588,6 @@ nest-asyncio==1.6.0
     # via ipykernel
     # via llama-index-core
     # via llama-index-legacy
-    # via ragas
 networkx==3.3
     # via llama-index-core
     # via llama-index-legacy
@@ -617,8 +611,8 @@ numpy==1.26.4
     # via jax
     # via jaxlib
     # via langchain
-    # via langchain-community
     # via langmax
+    # via llama-cpp-python
     # via llama-index-core
     # via llama-index-legacy
     # via lmql
@@ -630,7 +624,6 @@ numpy==1.26.4
     # via pandas
     # via pyarrow
     # via pydeck
-    # via ragas
     # via scipy
     # via sglang
     # via streamlit
@@ -649,7 +642,6 @@ openai==1.35.4
     # via llama-index-legacy
     # via lmql
     # via parea-ai
-    # via ragas
     # via sglang
 opt-einsum==3.3.0
     # via jax
@@ -787,6 +779,7 @@ pydantic-extra-types==2.8.2
     # via prefect
 pydantic-settings==2.2.1
     # via controlflow
+    # via llama-cpp-python
     # via prefect
 pydeck==0.9.1
     # via streamlit
@@ -812,7 +805,6 @@ pyproject-hooks==1.1.0
     # via poetry
 pysbd==0.3.4
     # via parea-ai
-    # via ragas
 pystemmer==2.2.0.1
     # via bm25s
 python-dateutil==2.9.0.post0
@@ -854,8 +846,8 @@ pyyaml==6.0.1
     # via huggingface-hub
     # via jupyter-events
     # via langchain
-    # via langchain-community
     # via langchain-core
+    # via llama-cpp-python
     # via llama-index-core
     # via marimo
     # via mlx-lm
@@ -875,8 +867,6 @@ qtconsole==5.5.2
     # via jupyter
 qtpy==2.4.1
     # via qtconsole
-ragas @ git+https://github.com/explodinggradients/ragas@9bc6e6fd44180e658751e15da3a3829c957ee853
-    # via langmax
 rapidfuzz==3.9.2
     # via cleo
     # via levenshtein
@@ -902,7 +892,6 @@ requests==2.32.3
     # via huggingface-hub
     # via jupyterlab-server
     # via langchain
-    # via langchain-community
     # via langsmith
     # via litellm
     # via llama-index-core
@@ -994,16 +983,21 @@ soupsieve==2.5
 sqlalchemy==2.0.30
     # via alembic
     # via langchain
-    # via langchain-community
     # via llama-index-core
     # via llama-index-legacy
     # via optuna
     # via prefect
+sse-starlette==2.1.2
+    # via llama-cpp-python
 stack-data==0.6.3
     # via ipython
 starlette==0.37.2
     # via fastapi
     # via marimo
+    # via sse-starlette
+    # via starlette-context
+starlette-context==0.3.6
+    # via llama-cpp-python
 streamlit==1.36.0
     # via langmax
 striprtf==0.0.26
@@ -1016,7 +1010,6 @@ synchronicity==0.6.7
     # via modal
 tenacity==8.4.2
     # via langchain
-    # via langchain-community
     # via langchain-core
     # via langmax
     # via llama-index-core
@@ -1041,7 +1034,6 @@ tiktoken==0.7.0
     # via llama-index-legacy
     # via lmql
     # via parea-ai
-    # via ragas
     # via sglang
 time-machine==2.14.1
     # via pendulum
@@ -1129,6 +1121,7 @@ typing-extensions==4.12.0
     # via great-tables
     # via htmltools
     # via huggingface-hub
+    # via llama-cpp-python
     # via llama-index-core
     # via llama-index-legacy
     # via modal
@@ -1170,8 +1163,10 @@ urllib3==2.2.1
 uvicorn==0.25.0
     # via fastapi
     # via gradio
+    # via llama-cpp-python
     # via marimo
     # via prefect
+    # via sse-starlette
 uvloop==0.19.0
     # via uvicorn
 virtualenv==20.26.2

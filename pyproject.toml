@@ -8,6 +8,7 @@
     readme = "README.md"
     requires-python = ">= 3.12"
     dependencies = [
+        "anthropic>=0.29.0",
         "autocorrect-py>=2.9.0",
         "banks>=0.4.1",
         "bm25s[full]>=0.1.7",
@@ -22,6 +23,7 @@
         "langchain>=0.2.6",
         "langdetect>=1.0.9",
         "litellm>=1.40.27",
+        "llama-cpp-python[server]>=0.2.79",
         "llama-index>=0.10.50",
         "lmql>=0.7.3",
         "marimo>=0.6.23",

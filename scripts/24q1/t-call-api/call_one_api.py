@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-YOUR_KEY = "sk-ui5YzB96L65r0O9yEeC71b271b20499a92D34eC4EcF54cB3"
+YOUR_KEY = ""
 YOUR_BASE_URL = "https://one-api.qkvlab.com/v1"
 YOUR_MODEL = "claude-3-opus-20240229"
 

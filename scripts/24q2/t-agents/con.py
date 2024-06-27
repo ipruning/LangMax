@@ -28,7 +28,7 @@ def research_workflow() -> str:
     # Task 3: the author agent will write a first draft
     draft = cf.Task("Write a first draft", context=dict(outline=outline), agents=[author])
 
-    return draft
+    return draft  # type: ignore
 
 
 # run the workflow

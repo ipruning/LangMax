@@ -25,6 +25,6 @@ repos:
       - id: trufflehog
         name: TruffleHog
         description: Detect secrets in your data.
-        entry: bash -c 'trufflehog-launcher git main HEAD'
+        entry: zsh -c 'trufflehog-launcher git main HEAD'
         language: system
         stages: ["commit", "push"]

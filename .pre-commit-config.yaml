@@ -22,3 +22,9 @@ repos:
         language: python
         language_version: python3
         minimum_pre_commit_version: "3.7.1"
+      - id: trufflehog
+        name: TruffleHog
+        description: Detect secrets in your data.
+        entry: bash -c 'trufflehog-launcher git main HEAD'
+        language: system
+        stages: ["commit", "push"]

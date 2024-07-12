@@ -134,86 +134,90 @@ def ipv4_to_uint32(ip_address: str) -> int:
     return uint32_value
 
 
-def generate_valid_ip() -> str:
-    return f"{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}"
+class IPGenerator:
+    @staticmethod
+    def generate_valid_ip() -> str:
+        return f"{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}"
 
+    @staticmethod
+    def generate_valid_ip_with_spaces() -> str:
+        octets: List[str] = [str(random.randint(0, 255)) for _ in range(4)]
+        ip_with_spaces: str = ""
+        for i, octet in enumerate(octets):
+            if i > 0:
+                ip_with_spaces += " " * random.randint(1, 3)
+                ip_with_spaces += "."
+                ip_with_spaces += " " * random.randint(1, 3)
+            ip_with_spaces += octet
+        return ip_with_spaces
 
-def generate_valid_ip_with_spaces() -> str:
-    octets: List[str] = [str(random.randint(0, 255)) for _ in range(4)]
-    ip_with_spaces: str = ""
-    for i, octet in enumerate(octets):
-        if i > 0:
-            ip_with_spaces += " " * random.randint(1, 3)
-            ip_with_spaces += "."
-            ip_with_spaces += " " * random.randint(1, 3)
-        ip_with_spaces += octet
-    return ip_with_spaces
+    @staticmethod
+    def generate_invalid_ip_with_spaces() -> str:
+        octets: List[str] = [str(random.randint(0, 255)) for _ in range(4)]
 
+        invalid_octet_index: int = random.randint(0, 3)
+        invalid_octet: str = octets[invalid_octet_index]
 
-def generate_invalid_ip_with_spaces() -> str:
-    octets: List[str] = [str(random.randint(0, 255)) for _ in range(4)]
+        if len(invalid_octet) == 1:
+            invalid_octet = str(random.randint(3, 9)) + invalid_octet
 
-    invalid_octet_index: int = random.randint(0, 3)
-    invalid_octet: str = octets[invalid_octet_index]
+        insert_pos: int = random.randint(1, len(invalid_octet) - 1)
+        invalid_octet = invalid_octet[:insert_pos] + " " + invalid_octet[insert_pos:]
 
-    if len(invalid_octet) == 1:
-        invalid_octet = str(random.randint(3, 9)) + invalid_octet
+        octets[invalid_octet_index] = invalid_octet
 
-    insert_pos: int = random.randint(1, len(invalid_octet) - 1)
-    invalid_octet = invalid_octet[:insert_pos] + " " + invalid_octet[insert_pos:]
+        ip_with_invalid_spaces: str = ""
+        for i, octet in enumerate(octets):
+            if i > 0:
+                ip_with_invalid_spaces += " " * random.randint(0, 2)
+                ip_with_invalid_spaces += "."
+                ip_with_invalid_spaces += " " * random.randint(0, 2)
+            ip_with_invalid_spaces += octet
 
-    octets[invalid_octet_index] = invalid_octet
+        return ip_with_invalid_spaces
 
-    ip_with_invalid_spaces: str = ""
-    for i, octet in enumerate(octets):
-        if i > 0:
-            ip_with_invalid_spaces += " " * random.randint(0, 2)
-            ip_with_invalid_spaces += "."
-            ip_with_invalid_spaces += " " * random.randint(0, 2)
-        ip_with_invalid_spaces += octet
+    @staticmethod
+    def generate_random_ip() -> Dict[str, Union[str, bool]]:
+        generators: List[Callable[[], str]] = [
+            IPGenerator.generate_valid_ip,
+            IPGenerator.generate_valid_ip_with_spaces,
+            IPGenerator.generate_invalid_ip_with_spaces,
+        ]
+        chosen_generator: Callable[[], str] = random.choice(generators)
+        generated_ip: str = chosen_generator()
 
-    return ip_with_invalid_spaces
+        actual_ip: str = "".join(generated_ip.split())
+        is_valid: bool = chosen_generator != IPGenerator.generate_invalid_ip_with_spaces
 
+        return {"generated_ip": generated_ip, "actual_ip": actual_ip, "is_valid": is_valid}
 
-def generate_random_ip() -> Dict[str, Union[str, bool]]:
-    generators: List[Callable[[], str]] = [
-        generate_valid_ip,
-        generate_valid_ip_with_spaces,
-        generate_invalid_ip_with_spaces,
-    ]
-    chosen_generator: Callable[[], str] = random.choice(generators)
-    generated_ip: str = chosen_generator()
+    @staticmethod
+    def generate_ip_batch(batch_size: int) -> List[Dict[str, Union[str, bool]]]:
+        ip_list: List[Dict[str, Union[str, bool]]] = []
+        for _ in range(batch_size):
+            ip_list.append(IPGenerator.generate_random_ip())
+        return ip_list
 
-    actual_ip: str = "".join(generated_ip.split())
-    is_valid: bool = chosen_generator != generate_invalid_ip_with_spaces
+    @staticmethod
+    def generate_ip_dataset(num_ips: int) -> List[Dict[str, Union[str, bool]]]:
+        num_cpus: int = multiprocessing.cpu_count()
+        batch_size: int = num_ips // num_cpus
 
-    return {"generated_ip": generated_ip, "actual_ip": actual_ip, "is_valid": is_valid}
+        with multiprocessing.Pool(processes=num_cpus) as pool:
+            results: List[List[Dict[str, Union[str, bool]]]] = pool.map(
+                IPGenerator.generate_ip_batch, [batch_size] * num_cpus
+            )
 
-
-def generate_ip_batch(batch_size: int) -> List[Dict[str, Union[str, bool]]]:
-    ip_list: List[Dict[str, Union[str, bool]]] = []
-    for _ in range(batch_size):
-        ip_list.append(generate_random_ip())
-    return ip_list
-
-
-def generate_ip_dataset(num_ips: int) -> List[Dict[str, Union[str, bool]]]:
-    num_cpus: int = multiprocessing.cpu_count()
-    batch_size: int = num_ips // num_cpus
-
-    with multiprocessing.Pool(processes=num_cpus) as pool:
-        results: List[List[Dict[str, Union[str, bool]]]] = pool.map(generate_ip_batch, [batch_size] * num_cpus)
-
-    ip_list: List[Dict[str, Union[str, bool]]] = [ip for batch in results for ip in batch]
-    return ip_list[:num_ips]
+        ip_list: List[Dict[str, Union[str, bool]]] = [ip for batch in results for ip in batch]
+        return ip_list[:num_ips]
 
 
 class TestIPv4ToUint32(unittest.TestCase):
-    def test_random_ips(self):
+    def test_random_cases(self):
         num_tests = MAX_TEST_CASES
 
         for _ in range(num_tests):
-            ip_data = generate_random_ip()
+            ip_data = IPGenerator.generate_random_ip()
             generated_ip = ip_data["generated_ip"]
             actual_ip = ip_data["actual_ip"]
             is_valid = ip_data["is_valid"]
@@ -259,7 +263,7 @@ class TestIPv4ToUint32(unittest.TestCase):
 
 
 def test_perf():
-    ip_data = generate_ip_dataset(MAX_TEST_CASES)
+    ip_data = IPGenerator.generate_ip_dataset(MAX_TEST_CASES)
     ip_list = [ip_info["generated_ip"] for ip_info in ip_data]
     print(f"Processed {len(ip_list)} IP addresses:")
 
@@ -304,7 +308,7 @@ def test_perf_and_plot_complexity():
     ratios: List[float] = []
 
     for case in test_cases:
-        ip_data: List[Dict[str, Union[str, bool]]] = generate_ip_dataset(case)
+        ip_data: List[Dict[str, Union[str, bool]]] = IPGenerator.generate_ip_dataset(case)
         ip_list: List[str] = [ip_info["generated_ip"] for ip_info in ip_data]  # type: ignore
 
         # Increase sample size
@@ -366,6 +370,6 @@ def test_perf_and_plot_complexity():
 
 if __name__ == "__main__":
     MAX_TEST_CASES = 1000000
-
     unittest.main()
-    # test_perf()
+    test_perf()
+    test_perf_and_plot_complexity()

@@ -25,6 +25,6 @@ repos:
       - id: trufflehog
         name: TruffleHog
         description: Detect secrets in your data.
-        entry: zsh -c 'trufflehog-launcher git main HEAD'
+        entry: bash -c 'docker run -v "$(pwd):/workdir" -it --rm us-docker.pkg.dev/thog-artifacts/public/scanner:latest git main HEAD /workdir'
         language: system
         stages: ["commit", "push"]

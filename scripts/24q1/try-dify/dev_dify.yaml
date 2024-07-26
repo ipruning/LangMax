@@ -1,0 +1,17 @@
+session_name: dify
+windows:
+  - window_name: monitor
+    panes:
+      - lazydocker
+  - window_name: api
+    shell_command_before:
+      - cd ~/Coding/dify/api
+      - conda activate dify
+    panes:
+      - flask run --host 0.0.0.0 --port=5001 --debug
+      - celery -A app.celery worker -P gevent -c 1 -Q dataset,generation,mail --loglevel INFO
+  - window_name: web
+    shell_command_before:
+      - cd ~/Coding/dify/web
+    panes:
+      - npm run start

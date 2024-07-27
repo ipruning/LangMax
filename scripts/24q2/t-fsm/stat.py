@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-import statesman
+import statesman  # type: ignore
 
 
 class ProcessLifecycle(statesman.StateMachine):
@@ -61,7 +61,7 @@ async def _examples():
     assert state_machine.pid == 31337
     assert state_machine.state == ProcessLifecycle.States.starting
 
-    await state_machine.run()
+    await state_machine.run()  # type: ignore
     assert state_machine.logs == ['Process pid 31337 is now running (command="ls -al")']
 
     await state_machine.stop()

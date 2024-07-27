@@ -1,4 +1,4 @@
-from statemachine import State, StateMachine
+from statemachine import State, StateMachine  # type: ignore
 
 
 class TrafficLightMachine(StateMachine):
@@ -22,4 +22,4 @@ class TrafficLightMachine(StateMachine):
 
 
 sm = TrafficLightMachine()
-sm._graph().write_png("out.png")  # type: ignore
+sm._graph().write_png("out.png")

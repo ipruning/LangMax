@@ -342,7 +342,7 @@ def test_perf_and_plot_complexity():
         times_v1.append(avg_time_v1)
         ratios.append(avg_time_v1 / avg_time_v0)
 
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)  # type: ignore
 
     ax1.plot(test_cases, times_v0, label="ipv4_to_uint32_baseline")
     ax1.plot(test_cases, times_v1, label="ipv4_to_uint32")

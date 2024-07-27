@@ -12,7 +12,7 @@ def text_qa(s, question):
     s += "A:" + gen("answer", stop="\n")
 
 
-state = text_qa.run(question="What is the capital of France?", temperature=0.1, stream=True)
+state = text_qa.run(question="What is the capital of France?", temperature=0.1, stream=True)  # type: ignore
 
 for out in state.text_iter():
     print(out, end="", flush=True)

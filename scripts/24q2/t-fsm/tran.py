@@ -1,6 +1,6 @@
 import random
 
-from transitions import Machine
+from transitions import Machine  # type: ignore
 
 
 class NarcolepticSuperhero(object):

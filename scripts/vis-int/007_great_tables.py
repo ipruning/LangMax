@@ -5,7 +5,7 @@ app = marimo.App(width="medium", app_title="Great Tables")
 
 
 @app.cell
-def __():  # type: ignore
+def __():
     from great_tables import GT, html
     from great_tables.data import sp500, sza
 
@@ -13,7 +13,7 @@ def __():  # type: ignore
 
 
 @app.cell
-def __(GT, sp500):  # type: ignore
+def __(GT, sp500):
     # Define the start and end dates for the data range
     start_date = "2010-06-07"
     end_date = "2010-06-14"

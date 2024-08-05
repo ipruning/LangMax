@@ -503,14 +503,14 @@ llama-cloud==0.0.6
     # via llama-index-indices-managed-llama-cloud
 llama-cpp-python==0.2.85
     # via langmax
-llama-index==0.10.58
+llama-index==0.10.59
     # via langmax
 llama-index-agent-openai==0.2.6
     # via llama-index
     # via llama-index-program-openai
 llama-index-cli==0.1.12
     # via llama-index
-llama-index-core==0.10.58
+llama-index-core==0.10.59
     # via llama-index
     # via llama-index-agent-openai
     # via llama-index-cli

@@ -33,7 +33,7 @@ altair==5.3.0
     # via streamlit
 annotated-types==0.7.0
     # via pydantic
-anthropic==0.31.2
+anthropic==0.32.0
     # via langchain-anthropic
     # via langmax
 anyio==4.4.0
@@ -89,6 +89,7 @@ beautifulsoup4==4.12.3
     # via llama-index-readers-file
     # via markdownify
     # via nbconvert
+    # via python-fasthtml
 black==24.4.2
     # via bm25s
 bleach==6.1.0
@@ -208,7 +209,7 @@ docker-pycreds==0.4.0
     # via wandb
 docutils==0.21.2
     # via marimo
-dspy-ai==2.4.12
+dspy-ai==2.4.13
     # via langmax
 dulwich==0.21.7
     # via poetry
@@ -216,6 +217,8 @@ einops==0.8.0
     # via langmax
 email-validator==2.2.0
     # via fastapi
+et-xmlfile==1.1.0
+    # via openpyxl
 exceptiongroup==1.2.1
     # via prefect
 executing==2.0.1
@@ -227,9 +230,15 @@ fastapi==0.111.0
     # via prefect
 fastapi-cli==0.0.4
     # via fastapi
+fastcore==1.6.3
+    # via fastlite
+    # via python-fasthtml
+    # via sqlite-minutils
 fastjsonschema==2.19.1
     # via nbformat
     # via poetry
+fastlite==0.0.7
+    # via python-fasthtml
 ffmpy==0.3.2
     # via gradio
 filelock==3.14.0
@@ -266,9 +275,11 @@ google-auth==2.30.0
     # via kubernetes
 googleapis-common-protos==1.63.2
     # via opentelemetry-exporter-otlp-proto-grpc
-gradio==4.39.0
+gptzip==0.0.2
     # via langmax
-gradio-client==1.1.1
+gradio==4.40.0
+    # via langmax
+gradio-client==1.2.0
     # via gradio
 graphviz==0.20.3
     # via prefect
@@ -310,6 +321,7 @@ httpx==0.27.0
     # via openai
     # via parea-ai
     # via prefect
+    # via python-fasthtml
     # via replicate
 huggingface-hub==0.23.2
     # via accelerate
@@ -362,6 +374,7 @@ isoduration==20.11.0
     # via jsonschema
 itsdangerous==2.2.0
     # via marimo
+    # via python-fasthtml
 jaraco-classes==3.4.0
     # via keyring
 jax==0.4.30
@@ -460,11 +473,11 @@ kiwisolver==1.4.5
     # via matplotlib
 kubernetes==30.1.0
     # via chromadb
-langchain==0.2.11
+langchain==0.2.12
     # via langmax
 langchain-anthropic==0.1.15
     # via controlflow
-langchain-core==0.2.24
+langchain-core==0.2.28
     # via controlflow
     # via langchain
     # via langchain-anthropic
@@ -483,12 +496,12 @@ levenshtein==0.25.1
     # via parea-ai
 linkify-it-py==2.0.3
     # via markdown-it-py
-litellm==1.42.4
+litellm==1.42.12
     # via banks
     # via langmax
 llama-cloud==0.0.6
     # via llama-index-indices-managed-llama-cloud
-llama-cpp-python==0.2.83
+llama-cpp-python==0.2.85
     # via langmax
 llama-index==0.10.58
     # via langmax
@@ -541,7 +554,7 @@ lmql==0.7.3
     # via langmax
 mako==1.3.5
     # via alembic
-marimo==0.7.12
+marimo==0.7.17
     # via langmax
 markdown==3.6
     # via apprise
@@ -656,12 +669,13 @@ numpy==1.26.4
     # via transformers
 oauthlib==3.2.2
     # via kubernetes
+    # via python-fasthtml
     # via requests-oauthlib
-ollama==0.3.0
+ollama==0.3.1
     # via langmax
 onnxruntime==1.18.0
     # via chromadb
-openai==1.37.1
+openai==1.38.0
     # via dspy-ai
     # via langchain-openai
     # via langmax
@@ -672,6 +686,8 @@ openai==1.37.1
     # via lmql
     # via parea-ai
     # via sglang
+openpyxl==3.1.5
+    # via langmax
 opentelemetry-api==1.25.0
     # via chromadb
     # via opentelemetry-exporter-otlp-proto-grpc
@@ -723,6 +739,7 @@ packaging==23.2
     # via black
     # via build
     # via datasets
+    # via fastcore
     # via gradio
     # via gradio-client
     # via htmltools
@@ -756,7 +773,7 @@ pandas==2.2.2
     # via streamlit
 pandocfilters==1.5.1
     # via nbconvert
-parea-ai==0.2.190
+parea-ai==0.2.191
     # via langmax
 parso==0.8.4
     # via jedi
@@ -793,14 +810,15 @@ poetry-plugin-dotenv==0.6.33
     # via parea-ai
 poetry-plugin-export==1.8.0
     # via poetry
-polars==1.2.1
+polars==1.4.1
     # via langmax
 posthog==3.5.0
     # via chromadb
-prefect==3.0.0rc9
+prefect==3.0.0rc14
     # via controlflow
 prometheus-client==0.20.0
     # via jupyter-server
+    # via prefect
 prompt-toolkit==3.0.45
     # via ipython
     # via jupyter-console
@@ -878,7 +896,7 @@ pypdf==4.2.0
     # via llama-index-readers-file
 pypika==0.48.9
     # via chromadb
-pypinyin==0.51.0
+pypinyin==0.52.0
     # via langmax
 pyproject-hooks==1.1.0
     # via build
@@ -898,6 +916,7 @@ python-dateutil==2.9.0.post0
     # via pendulum
     # via posthog
     # via prefect
+    # via python-fasthtml
     # via time-machine
 python-dotenv==1.0.1
     # via langmax
@@ -905,11 +924,14 @@ python-dotenv==1.0.1
     # via parea-ai
     # via pydantic-settings
     # via uvicorn
+python-fasthtml==0.2.3
+    # via langmax
 python-json-logger==2.0.7
     # via jupyter-events
 python-multipart==0.0.9
     # via fastapi
     # via gradio
+    # via python-fasthtml
 python-slugify==8.0.4
     # via prefect
 pytz==2024.1
@@ -966,7 +988,7 @@ regex==2024.5.15
     # via nltk
     # via tiktoken
     # via transformers
-replicate==0.30.1
+replicate==0.31.0
     # via langmax
 requests==2.32.3
     # via apprise
@@ -1043,7 +1065,7 @@ setproctitle==1.3.3
 setuptools==70.0.0
     # via opentelemetry-instrumentation
     # via wandb
-sglang==0.2.5
+sglang==0.2.10
     # via langmax
 shellingham==1.5.4
     # via poetry
@@ -1080,6 +1102,8 @@ sqlalchemy==2.0.30
     # via llama-index-legacy
     # via optuna
     # via prefect
+sqlite-minutils==3.36.0.post4
+    # via fastlite
 sse-starlette==2.1.2
     # via llama-cpp-python
 stack-data==0.6.3
@@ -1087,6 +1111,7 @@ stack-data==0.6.3
 starlette==0.37.2
     # via fastapi
     # via marimo
+    # via python-fasthtml
     # via sse-starlette
     # via starlette-context
 starlette-context==0.3.6
@@ -1159,11 +1184,12 @@ tornado==6.4
     # via notebook
     # via streamlit
     # via terminado
-tqdm==4.66.4
+tqdm==4.66.5
     # via bm25s
     # via chromadb
     # via datasets
     # via dspy-ai
+    # via gptzip
     # via huggingface-hub
     # via langmax
     # via llama-index-core
@@ -1189,6 +1215,7 @@ traitlets==5.14.3
     # via nbformat
     # via qtconsole
 transformers==4.43.3
+    # via gptzip
     # via langmax
     # via mlx-lm
 trove-classifiers==2024.5.22
@@ -1211,6 +1238,7 @@ typing-extensions==4.12.0
     # via great-tables
     # via htmltools
     # via huggingface-hub
+    # via langchain-core
     # via llama-cpp-python
     # via llama-index-core
     # via llama-index-legacy
@@ -1251,13 +1279,14 @@ urllib3==2.2.1
     # via kubernetes
     # via requests
     # via sentry-sdk
-uvicorn==0.25.0
+uvicorn==0.30.5
     # via chromadb
     # via fastapi
     # via gradio
     # via llama-cpp-python
     # via marimo
     # via prefect
+    # via python-fasthtml
     # via sse-starlette
 uvloop==0.19.0
     # via uvicorn

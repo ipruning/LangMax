@@ -3,7 +3,7 @@ from sglang import OpenAI, function, gen, set_default_backend
 
 load_dotenv()
 
-set_default_backend(OpenAI("gpt-4o"))
+set_default_backend(OpenAI("gpt-4o-2024-08-06"))
 
 
 @function

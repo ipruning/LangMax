@@ -104,7 +104,7 @@ def save_completion_data(completion_data: Dict[str, Any], output_file: str):
 def main():
     parser = argparse.ArgumentParser(description="Visualize logprob tree from OpenAI API completion.")
     parser.add_argument("prompt", help="Prompt to send to the API")
-    parser.add_argument("--model", default="gpt-4o-mini", help="Model to use for completion")
+    parser.add_argument("--model", default="gpt-4o-2024-08-06-2024-08-06", help="Model to use for completion")
     parser.add_argument("--output", default="logprob_tree", help="Output file for visualization (without extension)")
     parser.add_argument("--save-data", default="completion_data.json", help="File to save raw completion data")
     parser.add_argument("--depth", type=int, default=5, help="Depth of the tree visualization")
@@ -128,4 +128,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # python logprob_tree_visualizer.py "What can you do?" --model "gpt-4o-mini" --output "tree_visualization.png" --save-data "completion_data.json" --depth 10 --branch-factor 5
+    # python logprob_tree_visualizer.py "What can you do?" --model "gpt-4o-2024-08-06-2024-08-06" --output "tree_visualization.png" --save-data "completion_data.json" --depth 10 --branch-factor 5

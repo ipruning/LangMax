@@ -43,7 +43,6 @@ anyio==4.4.0
     # via jupyter-server
     # via openai
     # via prefect
-    # via sse-starlette
     # via starlette
     # via watchfiles
 appnope==0.1.4
@@ -194,8 +193,6 @@ dill==0.3.7
 dirtyjson==1.0.8
     # via llama-index-core
     # via llama-index-legacy
-diskcache==5.6.3
-    # via llama-cpp-python
 distlib==0.3.8
     # via virtualenv
 distro==1.9.0
@@ -226,7 +223,6 @@ executing==2.0.1
 fastapi==0.111.0
     # via chromadb
     # via gradio
-    # via llama-cpp-python
     # via prefect
 fastapi-cli==0.0.4
     # via fastapi
@@ -396,7 +392,6 @@ jinja2==3.1.4
     # via jupyterlab-server
     # via langmax
     # via litellm
-    # via llama-cpp-python
     # via mlx-lm
     # via nbconvert
     # via prefect
@@ -406,6 +401,7 @@ jinja2-humanize-extension==0.4.0
     # via prefect
 jiter==0.4.0
     # via anthropic
+    # via openai
 joblib==1.3.2
     # via dspy-ai
     # via nltk
@@ -496,21 +492,19 @@ levenshtein==0.25.1
     # via parea-ai
 linkify-it-py==2.0.3
     # via markdown-it-py
-litellm==1.42.12
+litellm==1.43.0
     # via banks
     # via langmax
 llama-cloud==0.0.6
     # via llama-index-indices-managed-llama-cloud
-llama-cpp-python==0.2.85
-    # via langmax
-llama-index==0.10.59
+llama-index==0.10.61
     # via langmax
 llama-index-agent-openai==0.2.6
     # via llama-index
     # via llama-index-program-openai
 llama-index-cli==0.1.12
     # via llama-index
-llama-index-core==0.10.59
+llama-index-core==0.10.61
     # via llama-index
     # via llama-index-agent-openai
     # via llama-index-cli
@@ -650,7 +644,6 @@ numpy==1.26.4
     # via jaxlib
     # via langchain
     # via langmax
-    # via llama-cpp-python
     # via llama-index-core
     # via llama-index-legacy
     # via lmql
@@ -675,7 +668,7 @@ ollama==0.3.1
     # via langmax
 onnxruntime==1.18.0
     # via chromadb
-openai==1.38.0
+openai==1.40.0
     # via dspy-ai
     # via langchain-openai
     # via langmax
@@ -773,7 +766,7 @@ pandas==2.2.2
     # via streamlit
 pandocfilters==1.5.1
     # via nbconvert
-parea-ai==0.2.191
+parea-ai==0.2.193
     # via langmax
 parso==0.8.4
     # via jedi
@@ -875,7 +868,6 @@ pydantic-extra-types==2.8.2
     # via prefect
 pydantic-settings==2.2.1
     # via controlflow
-    # via llama-cpp-python
     # via prefect
 pydeck==0.9.1
     # via streamlit
@@ -924,7 +916,7 @@ python-dotenv==1.0.1
     # via parea-ai
     # via pydantic-settings
     # via uvicorn
-python-fasthtml==0.2.3
+python-fasthtml==0.2.4
     # via langmax
 python-json-logger==2.0.7
     # via jupyter-events
@@ -953,7 +945,6 @@ pyyaml==6.0.1
     # via kubernetes
     # via langchain
     # via langchain-core
-    # via llama-cpp-python
     # via llama-index-core
     # via marimo
     # via mlx-lm
@@ -1104,19 +1095,13 @@ sqlalchemy==2.0.30
     # via prefect
 sqlite-minutils==3.36.0.post4
     # via fastlite
-sse-starlette==2.1.2
-    # via llama-cpp-python
 stack-data==0.6.3
     # via ipython
 starlette==0.37.2
     # via fastapi
     # via marimo
     # via python-fasthtml
-    # via sse-starlette
-    # via starlette-context
-starlette-context==0.3.6
-    # via llama-cpp-python
-streamlit==1.37.0
+streamlit==1.37.1
     # via langmax
 striprtf==0.0.26
     # via llama-index-readers-file
@@ -1214,7 +1199,7 @@ traitlets==5.14.3
     # via nbconvert
     # via nbformat
     # via qtconsole
-transformers==4.43.3
+transformers==4.44.0
     # via gptzip
     # via langmax
     # via mlx-lm
@@ -1239,7 +1224,6 @@ typing-extensions==4.12.0
     # via htmltools
     # via huggingface-hub
     # via langchain-core
-    # via llama-cpp-python
     # via llama-index-core
     # via llama-index-legacy
     # via openai
@@ -1283,11 +1267,9 @@ uvicorn==0.30.5
     # via chromadb
     # via fastapi
     # via gradio
-    # via llama-cpp-python
     # via marimo
     # via prefect
     # via python-fasthtml
-    # via sse-starlette
 uvloop==0.19.0
     # via uvicorn
 virtualenv==20.26.2

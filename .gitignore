@@ -168,3 +168,4 @@ scripts/24q1/chatgpt-api-by-browser-script/
 wandb/
 *.excalidraw.json
 *.private.env
+.sesskey

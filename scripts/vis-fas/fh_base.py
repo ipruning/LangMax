@@ -1,4 +1,4 @@
-from fasthtml.common import *
+from fasthtml.common import Div, P, fast_app, serve
 
 app, rt = fast_app()
 
@@ -8,4 +8,5 @@ def get():
     return Div(P("Hello World!"), hx_get="/change")
 
 
-serve()
+if __name__ == "__main__":
+    serve()

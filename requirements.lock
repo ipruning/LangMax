@@ -33,7 +33,7 @@ altair==5.3.0
     # via streamlit
 annotated-types==0.7.0
     # via pydantic
-anthropic==0.32.0
+anthropic==0.33.0
     # via langchain-anthropic
     # via langmax
 anyio==4.4.0
@@ -230,7 +230,7 @@ fastcore==1.6.3
     # via fastlite
     # via python-fasthtml
     # via sqlite-minutils
-fastjsonschema==2.19.1
+fastjsonschema==2.20.0
     # via nbformat
     # via poetry
 fastlite==0.0.7
@@ -267,15 +267,34 @@ gitdb==4.0.11
 gitpython==3.1.43
     # via streamlit
     # via wandb
+google-ai-generativelanguage==0.6.6
+    # via google-generativeai
+google-api-core==2.19.1
+    # via google-ai-generativelanguage
+    # via google-api-python-client
+    # via google-generativeai
+google-api-python-client==2.140.0
+    # via google-generativeai
 google-auth==2.30.0
+    # via google-ai-generativelanguage
+    # via google-api-core
+    # via google-api-python-client
+    # via google-auth-httplib2
+    # via google-generativeai
     # via kubernetes
+google-auth-httplib2==0.2.0
+    # via google-api-python-client
+google-generativeai==0.7.2
+    # via langmax
 googleapis-common-protos==1.63.2
+    # via google-api-core
+    # via grpcio-status
     # via opentelemetry-exporter-otlp-proto-grpc
 gptzip==0.0.2
     # via langmax
-gradio==4.40.0
+gradio==4.41.0
     # via langmax
-gradio-client==1.2.0
+gradio-client==1.3.0
     # via gradio
 graphviz==0.20.3
     # via prefect
@@ -287,7 +306,11 @@ griffe==0.47.0
     # via prefect
 grpcio==1.65.0rc1
     # via chromadb
+    # via google-api-core
+    # via grpcio-status
     # via opentelemetry-exporter-otlp-proto-grpc
+grpcio-status==1.63.0rc1
+    # via google-api-core
 h11==0.14.0
     # via httpcore
     # via uvicorn
@@ -300,6 +323,9 @@ htmltools==0.5.2
 httpcore==1.0.5
     # via httpx
     # via prefect
+httplib2==0.22.0
+    # via google-api-python-client
+    # via google-auth-httplib2
 httptools==0.6.1
     # via uvicorn
 httpx==0.27.0
@@ -446,7 +472,7 @@ jupyter-events==0.10.0
     # via jupyter-server
 jupyter-lsp==2.2.5
     # via jupyterlab
-jupyter-server==2.14.1
+jupyter-server==2.14.2
     # via jupyter-lsp
     # via jupyterlab
     # via jupyterlab-server
@@ -454,11 +480,11 @@ jupyter-server==2.14.1
     # via notebook-shim
 jupyter-server-terminals==0.5.3
     # via jupyter-server
-jupyterlab==4.2.1
+jupyterlab==4.3.0a2
     # via notebook
 jupyterlab-pygments==0.3.0
     # via nbconvert
-jupyterlab-server==2.27.2
+jupyterlab-server==2.27.3
     # via jupyterlab
     # via notebook
 jupyterlab-widgets==3.0.11
@@ -492,19 +518,19 @@ levenshtein==0.25.1
     # via parea-ai
 linkify-it-py==2.0.3
     # via markdown-it-py
-litellm==1.43.0
+litellm==1.43.4
     # via banks
     # via langmax
 llama-cloud==0.0.6
     # via llama-index-indices-managed-llama-cloud
-llama-index==0.10.61
+llama-index==0.10.62
     # via langmax
 llama-index-agent-openai==0.2.6
     # via llama-index
     # via llama-index-program-openai
 llama-index-cli==0.1.12
     # via llama-index
-llama-index-core==0.10.61
+llama-index-core==0.10.62
     # via llama-index
     # via llama-index-agent-openai
     # via llama-index-cli
@@ -548,7 +574,7 @@ lmql==0.7.3
     # via langmax
 mako==1.3.5
     # via alembic
-marimo==0.7.17
+marimo==0.7.19
     # via langmax
 markdown==3.6
     # via apprise
@@ -582,7 +608,7 @@ mistune==3.0.2
 ml-dtypes==0.4.0
     # via jax
     # via jaxlib
-mlx==0.16.1
+mlx==0.16.2
     # via langmax
     # via mlx-lm
 mlx-lm==0.16.1
@@ -591,11 +617,11 @@ mmh3==4.1.0
     # via chromadb
 monotonic==1.6
     # via posthog
-more-itertools==10.2.0
+more-itertools==10.4.0
     # via jaraco-classes
 mpmath==1.3.0
     # via sympy
-msgpack==1.0.8
+msgpack==1.1.0rc1
     # via cachecontrol
 multidict==6.0.5
     # via aiohttp
@@ -625,7 +651,7 @@ networkx==3.3
 nltk==3.8.1
     # via llama-index-core
     # via llama-index-legacy
-notebook==7.2.0
+notebook==7.3.0a1
     # via jupyter
 notebook-shim==0.2.4
     # via jupyterlab
@@ -668,7 +694,7 @@ ollama==0.3.1
     # via langmax
 onnxruntime==1.18.0
     # via chromadb
-openai==1.40.0
+openai==1.40.2
     # via dspy-ai
     # via langchain-openai
     # via langmax
@@ -766,7 +792,7 @@ pandas==2.2.2
     # via streamlit
 pandocfilters==1.5.1
     # via nbconvert
-parea-ai==0.2.193
+parea-ai==0.2.197
     # via langmax
 parso==0.8.4
     # via jedi
@@ -785,7 +811,7 @@ pillow==10.3.0
     # via llama-index-core
     # via matplotlib
     # via streamlit
-pkginfo==1.10.0
+pkginfo==1.11.1
     # via poetry
 platformdirs==4.2.2
     # via black
@@ -815,11 +841,19 @@ prometheus-client==0.20.0
 prompt-toolkit==3.0.45
     # via ipython
     # via jupyter-console
-protobuf==3.20.3
+proto-plus==1.24.0
+    # via google-ai-generativelanguage
+    # via google-api-core
+protobuf==4.25.4
+    # via google-ai-generativelanguage
+    # via google-api-core
+    # via google-generativeai
     # via googleapis-common-protos
+    # via grpcio-status
     # via mlx-lm
     # via onnxruntime
     # via opentelemetry-proto
+    # via proto-plus
     # via streamlit
     # via transformers
     # via wandb
@@ -850,6 +884,7 @@ pydantic==2.7.2
     # via chromadb
     # via dspy-ai
     # via fastapi
+    # via google-generativeai
     # via gradio
     # via langchain
     # via langchain-core
@@ -883,6 +918,7 @@ pygments==2.18.0
 pymdown-extensions==10.8.1
     # via marimo
 pyparsing==3.1.2
+    # via httplib2
     # via matplotlib
 pypdf==4.2.0
     # via llama-index-readers-file
@@ -932,7 +968,7 @@ pytz==2024.1
     # via pandas
     # via parea-ai
     # via prefect
-pyupgrade==3.15.2
+pyupgrade==3.17.0
     # via parea-ai
 pyyaml==6.0.1
     # via accelerate
@@ -964,7 +1000,7 @@ qtconsole==5.5.2
     # via jupyter
 qtpy==2.4.1
     # via qtconsole
-rapidfuzz==3.9.2
+rapidfuzz==3.9.6
     # via cleo
     # via levenshtein
 readchar==4.1.0
@@ -988,6 +1024,7 @@ requests==2.32.3
     # via docker
     # via dspy-ai
     # via fsspec
+    # via google-api-core
     # via huggingface-hub
     # via jupyterlab-server
     # via kubernetes
@@ -1054,9 +1091,10 @@ sentry-sdk==2.3.1
 setproctitle==1.3.3
     # via wandb
 setuptools==70.0.0
+    # via jupyterlab
     # via opentelemetry-instrumentation
     # via wandb
-sglang==0.2.10
+sglang==0.2.11
     # via langmax
 shellingham==1.5.4
     # via poetry
@@ -1142,7 +1180,7 @@ time-machine==2.14.1
     # via pendulum
 tinycss2==1.3.0
     # via nbconvert
-tokenize-rt==5.2.0
+tokenize-rt==6.0.0
     # via pyupgrade
 tokenizers==0.19.1
     # via anthropic
@@ -1174,6 +1212,7 @@ tqdm==4.66.5
     # via chromadb
     # via datasets
     # via dspy-ai
+    # via google-generativeai
     # via gptzip
     # via huggingface-hub
     # via langmax
@@ -1203,7 +1242,7 @@ transformers==4.44.0
     # via gptzip
     # via langmax
     # via mlx-lm
-trove-classifiers==2024.5.22
+trove-classifiers==2024.7.2
     # via poetry
 typer==0.12.3
     # via chromadb
@@ -1218,6 +1257,7 @@ typing-extensions==4.12.0
     # via anthropic
     # via chromadb
     # via fastapi
+    # via google-generativeai
     # via gradio
     # via gradio-client
     # via great-tables
@@ -1256,6 +1296,8 @@ ujson==5.10.0
     # via prefect
 uri-template==1.3.0
     # via jsonschema
+uritemplate==4.1.1
+    # via google-api-python-client
 urllib3==2.2.1
     # via docker
     # via dulwich
@@ -1272,15 +1314,15 @@ uvicorn==0.30.5
     # via python-fasthtml
 uvloop==0.19.0
     # via uvicorn
-virtualenv==20.26.2
+virtualenv==20.26.3
     # via poetry
-wandb==0.17.5
+wandb==0.17.6
     # via langmax
 watchfiles==0.20.0
     # via uvicorn
 wcwidth==0.2.13
     # via prompt-toolkit
-webcolors==1.13
+webcolors==24.6.0
     # via jsonschema
 webencodings==0.5.1
     # via bleach

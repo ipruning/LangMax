@@ -48,7 +48,7 @@
         "sentencepiece~=0.2.0",
         "sglang[openai]~=0.2.12",
         "streamlit~=1.37.1",
-        "tenacity==8.5.0",
+        "tenacity~=8.5.0",
         "tiktoken~=0.7.0",
         "tqdm~=4.66.5",
         "transformers[torch]~=4.44.0",

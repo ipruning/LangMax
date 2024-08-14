@@ -351,6 +351,7 @@ huggingface-hub==0.23.2
     # via datasets
     # via gradio
     # via gradio-client
+    # via mlx-whisper
     # via tokenizers
     # via transformers
 humanfriendly==10.0
@@ -570,6 +571,8 @@ llama-index-readers-llama-parse==0.1.4
     # via llama-index
 llama-parse==0.4.4
     # via llama-index-readers-llama-parse
+llvmlite==0.43.0
+    # via numba
 lmql==0.7.3
     # via langmax
 mako==1.3.5
@@ -611,7 +614,10 @@ ml-dtypes==0.4.0
 mlx==0.16.3
     # via langmax
     # via mlx-lm
+    # via mlx-whisper
 mlx-lm==0.16.1
+    # via langmax
+mlx-whisper==0.2.0
     # via langmax
 mmh3==4.1.0
     # via chromadb
@@ -619,6 +625,7 @@ monotonic==1.6
     # via posthog
 more-itertools==10.4.0
     # via jaraco-classes
+    # via mlx-whisper
 mpmath==1.3.0
     # via sympy
 msgpack==1.1.0rc1
@@ -656,6 +663,8 @@ notebook==7.3.0a1
 notebook-shim==0.2.4
     # via jupyterlab
     # via notebook
+numba==0.60.0
+    # via mlx-whisper
 numpy==1.26.4
     # via accelerate
     # via altair
@@ -675,6 +684,8 @@ numpy==1.26.4
     # via matplotlib
     # via ml-dtypes
     # via mlx-lm
+    # via mlx-whisper
+    # via numba
     # via onnxruntime
     # via opt-einsum
     # via optuna
@@ -1078,6 +1089,7 @@ scipy==1.13.1
     # via bm25s
     # via jax
     # via jaxlib
+    # via mlx-whisper
 semantic-version==2.10.0
     # via gradio
 send2trash==1.8.3
@@ -1173,6 +1185,7 @@ tiktoken==0.7.0
     # via llama-index-core
     # via llama-index-legacy
     # via lmql
+    # via mlx-whisper
     # via parea-ai
     # via sglang
 time-machine==2.14.1
@@ -1197,6 +1210,7 @@ toolz==0.12.1
     # via altair
 torch==2.3.0
     # via accelerate
+    # via mlx-whisper
     # via transformers
 tornado==6.4
     # via ipykernel
@@ -1216,6 +1230,7 @@ tqdm==4.66.5
     # via huggingface-hub
     # via langmax
     # via llama-index-core
+    # via mlx-whisper
     # via nltk
     # via openai
     # via optuna

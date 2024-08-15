@@ -1,12 +1,11 @@
-from os import getenv
-from pathlib import Path
+import os
 
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[3] / ".env")
+load_dotenv()
 
-OPENROUTER_API_KEY = getenv("api_key_openrouter_pool_001")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 YOUR_SITE_URL = "https://www.qkvlab.com"
 YOUR_APP_NAME = "QKV Lab"
 

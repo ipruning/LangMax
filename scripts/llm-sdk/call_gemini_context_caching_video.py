@@ -8,7 +8,6 @@ from google.generativeai import caching
 
 load_dotenv()
 
-
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Download video file

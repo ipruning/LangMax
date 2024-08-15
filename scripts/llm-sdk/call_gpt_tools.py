@@ -1,8 +1,12 @@
+import os
+
+from dotenv import load_dotenv
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
+load_dotenv()
 GPT_MODEL = "gpt-4o-2024-08-06"
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 @retry(wait=wait_random_exponential(multiplier=1, max=40), stop=stop_after_attempt(3))

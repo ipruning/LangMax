@@ -1,9 +1,13 @@
+import os
 from typing import List, Optional
 
+from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
 
-client = OpenAI()
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 class Step(BaseModel):

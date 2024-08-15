@@ -9,7 +9,6 @@ load_dotenv()
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-
 some_long_text = """
 """
 
@@ -21,9 +20,7 @@ cache = caching.CachedContent.create(
     ttl=datetime.timedelta(minutes=5),
 )
 
-
 model = genai.GenerativeModel.from_cached_content(cached_content=cache)
-
 
 response = model.generate_content("")
 

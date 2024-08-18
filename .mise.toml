@@ -1,2 +1,4 @@
 [env]
   NODE_ENV = 'production'
+[settings]
+  env_file = '.env'

@@ -84,7 +84,7 @@ babel==2.15.0
 backoff==2.2.1
     # via dspy-ai
     # via posthog
-banks==0.4.1
+banks==0.5.0
     # via langmax
 bcrypt==4.1.3
     # via chromadb
@@ -230,14 +230,14 @@ fastapi==0.111.0
     # via prefect
 fastapi-cli==0.0.4
     # via fastapi
-fastcore==1.7.0
+fastcore==1.7.1
     # via fastlite
     # via python-fasthtml
     # via sqlite-minutils
 fastjsonschema==2.20.0
     # via nbformat
     # via poetry
-fastlite==0.0.7
+fastlite==0.0.9
     # via python-fasthtml
 ffmpy==0.3.2
     # via gradio
@@ -525,7 +525,7 @@ levenshtein==0.25.1
     # via parea-ai
 linkify-it-py==2.0.3
     # via markdown-it-py
-litellm==1.43.13
+litellm==1.43.17
     # via banks
     # via langmax
 llama-cloud==0.0.6
@@ -583,7 +583,7 @@ lmql==0.7.3
     # via langmax
 mako==1.3.5
     # via alembic
-marimo==0.7.20
+marimo==0.8.0
     # via langmax
 markdown==3.6
     # via apprise
@@ -619,11 +619,14 @@ ml-dtypes==0.4.0
     # via jaxlib
 mlx==0.16.3
     # via langmax
+    # via mlx-embeddings
     # via mlx-lm
     # via mlx-whisper
-mlx-lm==0.16.1
+mlx-embeddings==0.0.1
     # via langmax
-mlx-whisper==0.2.0
+mlx-lm==0.17.0
+    # via langmax
+mlx-whisper==0.3.0
     # via langmax
 mmh3==4.1.0
     # via chromadb
@@ -661,7 +664,7 @@ networkx==3.3
     # via llama-index-core
     # via llama-index-legacy
     # via torch
-nltk==3.8.2
+nltk==3.9
     # via llama-index-core
     # via llama-index-legacy
 notebook==7.3.0a1
@@ -808,7 +811,7 @@ pandas==2.2.2
     # via streamlit
 pandocfilters==1.5.1
     # via nbconvert
-parea-ai==0.2.207
+parea-ai==0.2.208
     # via langmax
 parso==0.8.4
     # via jedi
@@ -897,6 +900,7 @@ pycparser==2.22
     # via cffi
 pydantic==2.8.2
     # via anthropic
+    # via banks
     # via chromadb
     # via dspy-ai
     # via fastapi
@@ -968,7 +972,7 @@ python-dotenv==1.0.1
     # via parea-ai
     # via pydantic-settings
     # via uvicorn
-python-fasthtml==0.4.1
+python-fasthtml==0.4.3
     # via langmax
 python-json-logger==2.0.7
     # via jupyter-events
@@ -1111,7 +1115,7 @@ setuptools==70.0.0
     # via jupyterlab
     # via opentelemetry-instrumentation
     # via wandb
-sglang==0.2.12
+sglang==0.2.13
     # via langmax
 shellingham==1.5.4
     # via poetry
@@ -1148,7 +1152,7 @@ sqlalchemy==2.0.30
     # via llama-index-legacy
     # via optuna
     # via prefect
-sqlite-minutils==3.36.0.post4
+sqlite-minutils==3.37.0.post1
     # via fastlite
 stack-data==0.6.3
     # via ipython
@@ -1261,6 +1265,7 @@ traitlets==5.14.3
 transformers==4.44.0
     # via gptzip
     # via langmax
+    # via mlx-embeddings
     # via mlx-lm
 trove-classifiers==2024.7.2
     # via poetry
@@ -1336,7 +1341,7 @@ uvloop==0.19.0
     # via uvicorn
 virtualenv==20.26.3
     # via poetry
-wandb==0.17.6
+wandb==0.17.7
     # via langmax
 watchfiles==0.20.0
     # via uvicorn

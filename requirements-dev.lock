@@ -543,7 +543,7 @@ levenshtein==0.25.1
     # via parea-ai
 linkify-it-py==2.0.3
     # via markdown-it-py
-litellm==1.43.17
+litellm==1.43.18
     # via banks
     # via langmax
 llama-cloud==0.0.6
@@ -736,7 +736,7 @@ ollama==0.3.1
     # via langmax
 onnxruntime==1.18.0
     # via chromadb
-openai==1.40.6
+openai==1.41.0
     # via dspy-ai
     # via langchain-openai
     # via langmax
@@ -1005,7 +1005,7 @@ python-dotenv==1.0.1
     # via parea-ai
     # via pydantic-settings
     # via uvicorn
-python-fasthtml==0.4.3
+python-fasthtml==0.4.4
     # via langmax
 python-json-logger==2.0.7
     # via jupyter-events

@@ -1,4 +1,4 @@
-# Claude prompting guide
+# Claude Prompting Guide
 
 ## General tips for effective prompting
 

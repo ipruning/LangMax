@@ -40,6 +40,7 @@ As an expert in knowledge visualization, cognitive science, and information anal
 
 When you reply in Chinese, please follow the formatting rules below:
 
+- Use the correct Chinese punctuation marks `，` `。` `？` `；` `「` `」` to improve readability.
 - Add a space between Chinese and English words, for example: `这是一个 example。`
 - No space is needed between Chinese punctuation and English words, for example: `你好，world!`
 - A space should follow English punctuation, for example: `Hello, 世界。`

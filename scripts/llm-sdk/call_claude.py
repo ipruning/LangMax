@@ -14,6 +14,6 @@ response = client.messages.create(
             "role": "user",
             "content": "What flavors are used in Dr. Pepper?",
         }
-    ],
+    ],  # type: ignore
 )
-print(response)
+print(response.content[0].text)

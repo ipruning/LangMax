@@ -5,7 +5,7 @@ Leveraging the capabilities of LLMs to improve day-to-day tasks.
 ## Install
 
 ```shell
-poetry install --no-root --no-interaction
+uv sync --prerelease=allow
 ```
 
 ## ChangeLog

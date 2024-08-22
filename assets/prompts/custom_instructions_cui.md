@@ -51,7 +51,7 @@ When you design an claude artifact, please consider the user's intentions, then 
   - Some commonly used Python libraries
     - fastapi
     - httpx
-    - pydantic
+    - pydantic (version 2.x)
     - tenacity
     - tqdm
 

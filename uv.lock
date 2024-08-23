@@ -1819,7 +1819,7 @@ dependencies = [
     { name = "llama-index" },
     { name = "llama-index-llms-openai" },
     { name = "lmql" },
-    { name = "logfire" },
+    { name = "logfire", extra = ["fastapi"] },
     { name = "loguru" },
     { name = "marimo" },
     { name = "matplotlib" },
@@ -1879,7 +1879,7 @@ requires-dist = [
     { name = "llama-index", specifier = "~=0.11.0" },
     { name = "llama-index-llms-openai", specifier = ">=0.2.0" },
     { name = "lmql", specifier = "~=0.7.3" },
-    { name = "logfire", specifier = ">=0.51.0" },
+    { name = "logfire", extras = ["fastapi"], specifier = ">=0.51.0" },
     { name = "loguru", specifier = ">=0.7.2" },
     { name = "marimo", specifier = "~=0.8.2" },
     { name = "matplotlib", specifier = "~=3.9.2" },
@@ -1887,7 +1887,7 @@ requires-dist = [
     { name = "ollama", specifier = "~=0.3.1" },
     { name = "openai", specifier = "~=1.42.0" },
     { name = "openpyxl", specifier = "~=3.1.5" },
-    { name = "pathvalidate", specifier = "~=3.2.0" },
+    { name = "pathvalidate", specifier = "~=3.2.1" },
     { name = "polars", specifier = "~=1.5.0" },
     { name = "pypinyin", specifier = "~=0.52.0" },
     { name = "python-dotenv", specifier = "~=1.0.1" },
@@ -2233,6 +2233,11 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/93/cf/2e80869536b346ef984cd3e1f58d0dc0e3d2139baf1cd3be063025c09247/logfire-0.51.0.tar.gz", hash = "sha256:fa9ea9c566ac2c61053a838395ea185f1a8ac5da6564fa8d1e1b0c17a096fec6", size = 226756 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/55/08/b1e0841f8c9dd758ed74fa11956dda1fc30be96ba65843c20730dab98c43/logfire-0.51.0-py2.py3-none-any.whl", hash = "sha256:0b6490876ef1d652af82ad4c0eb3f2748d3ad45c7dc151628f3551d422797557", size = 158588 },
+]
+
+[package.optional-dependencies]
+fastapi = [
+    { name = "opentelemetry-instrumentation-fastapi" },
 ]
 
 [[package]]
@@ -2996,11 +3001,11 @@ wheels = [
 
 [[package]]
 name = "pathvalidate"
-version = "3.2.0"
+version = "3.2.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/27/93/e2b086c7aba96c70b5e7ef48251702fb95027638fb5a3e787d2efd65783e/pathvalidate-3.2.0.tar.gz", hash = "sha256:5e8378cf6712bff67fbe7a8307d99fa8c1a0cb28aa477056f8fc374f0dff24ad", size = 31246 }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/8c/8713d8dcd8e357b9358695b441ee974580a8addfaea4f01437df07577052/pathvalidate-3.2.1.tar.gz", hash = "sha256:f5d07b1e2374187040612a1fcd2bcb2919f8db180df254c9581bb90bf903377d", size = 59263 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0c/ab/673cce13ab635fd755d206b18c0a371ef6e28ddbe25fadba9ae6c59f22a5/pathvalidate-3.2.0-py3-none-any.whl", hash = "sha256:cc593caa6299b22b37f228148257997e2fa850eea2daf7e4cc9205cef6908dee", size = 23286 },
+    { url = "https://files.pythonhosted.org/packages/d3/5e/76a9d08b4b4e4583f269cb9f64de267f9aeae0dacef23307f53a14211716/pathvalidate-3.2.1-py3-none-any.whl", hash = "sha256:9a6255eb8f63c9e2135b9be97a5ce08f10230128c4ae7b3e935378b82b22c4c9", size = 23833 },
 ]
 
 [[package]]

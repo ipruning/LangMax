@@ -1,4 +1,4 @@
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings  # type: ignore
 from llama_index.core import download_loader
 from ragas.testset.evolutions import multi_context, reasoning, simple  # type: ignore
 from ragas.testset.generator import TestsetGenerator  # type: ignore

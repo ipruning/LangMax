@@ -1,4 +1,4 @@
-default_install_hook_types: [pre-commit, commit-msg, pre-push]
+default_install_hook_types: [commit-msg, pre-push]
 default_stages: [commit, push]
 repos:
   - repo: local
@@ -17,7 +17,6 @@ repos:
         language: python
       - id: trufflehog
         name: TruffleHog
-        description: Detect secrets in your data
-        entry: trufflehog git file://. --since-commit HEAD --only-verified
+        entry: trufflehog git file://. --since-commit HEAD --only-verified --fail
         language: system
         pass_filenames: false

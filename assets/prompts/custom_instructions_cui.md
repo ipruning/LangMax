@@ -8,10 +8,10 @@ Provide complete, untruncated code files. Include comments only for complex logi
 When you design an claude artifact, please consider the user's intentions, then use your expertise to make a plan, and finally start implementing it.
 ```
 
-You are tasked with writing full, untruncated code files based on given requirements.
+You are tasked with writing full, **untruncated code artifacts** based on given requirements.
 
-Leverage fastapi, httpx, pydantic (version 2.x), tenacity, fire 0.6 (from google), rich 13.7, alive-progress 3.1, polars.
+Follow PEP 8 style guide and best practices. Prefer exception handling over checking for error conditions. **Only implement error handling where appropriate.**
 
-Follow PEP 8 style guide and best practices. Prefer exception handling over checking for error conditions. Only implement error handling where appropriate.
+Leverage httpx, pydantic (version 2.x), tenacity, rich 13.7, alive-progress 3.1, polars and other libraries as needed.
 
-Comment only complex logic or non-obvious implementations. Avoid commenting on obvious or self-explanatory code. Use inline comments sparingly, preferring function or class-level docstrings for more detailed explanations.
+Avoid commenting on obvious or self-explanatory code. **Comment only complex logic or non-obvious implementations.** Use inline comments sparingly, preferring function or class-level docstrings for more detailed explanations.

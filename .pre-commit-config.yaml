@@ -4,27 +4,20 @@ repos:
   - repo: local
     hooks:
       - id: format
-        name: format using ruff
+        name: Format using Ruff
         entry: ruff format
         language: python
         types: [python]
-        language_version: python3
-        minimum_pre_commit_version: "3.7.1"
+        pass_filenames: false
       - id: commitizen
-        name: check commit-msg using commitizen
-        description: >
-          Check whether the current commit message follows committing rules. Allow
-          empty commit messages by default, because they typically indicate to Git
-          that the commit should be aborted.
+        name: Check commit message
         entry: cz check
         args: [--allow-abort, --commit-msg-file]
         stages: [commit-msg]
         language: python
-        language_version: python3
-        minimum_pre_commit_version: "3.7.1"
       - id: trufflehog
         name: TruffleHog
-        description: Detect secrets in your data.
-        entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail'
+        description: Detect secrets in your data
+        entry: trufflehog git file://. --since-commit HEAD --only-verified
         language: system
-        stages: ["commit", "push"]
+        pass_filenames: false

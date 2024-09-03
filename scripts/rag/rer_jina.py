@@ -1,3 +1,6 @@
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
 from transformers import AutoModelForSequenceClassification
 
 model = AutoModelForSequenceClassification.from_pretrained(
@@ -9,7 +12,6 @@ model = AutoModelForSequenceClassification.from_pretrained(
 model.to("mps")
 model.eval()
 
-# Example query and documents
 query = "Organic skincare products for sensitive skin"
 documents = [
     "Organic skincare for sensitive skin with aloe vera and chamomile.",
@@ -24,11 +26,17 @@ documents = [
     "新しいメイクのトレンドは鮮やかな色と革新的な技術に焦点を当てています",
 ]
 
-# construct sentence pairs
-sentence_pairs = [[query, doc] for doc in documents]
+console = Console()
 
+sentence_pairs = [[query, doc] for doc in documents]
 scores = model.compute_score(sentence_pairs, max_length=1024)
 
-# Print scores with corresponding sentence pairs
+table = Table(title="Query Results", show_header=True, header_style="bold magenta")
+table.add_column("Query", style="cyan", no_wrap=True)
+table.add_column("Document", style="green")
+table.add_column("Score", justify="right", style="yellow")
+
 for pair, score in zip(sentence_pairs, scores):
-    print(f"Query: {pair[0]}\nDocument: {pair[1]}\nScore: {score}\n")
+    table.add_row(pair[0], pair[1], f"{score:.4f}")
+
+console.print(Panel(table, expand=False))

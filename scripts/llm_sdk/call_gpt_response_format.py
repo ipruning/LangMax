@@ -1,11 +1,8 @@
 import os
 from typing import List, Optional
 
-from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
-
-load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -15,13 +12,13 @@ class Step(BaseModel):
 
 
 class CoTReasoning(BaseModel):
-    step_details: List[Step]
-    final_output: str
+    reasoning_steps: List[Step]
+    final_answer: str
 
 
 def get_reasoning(prompt: str) -> Optional[CoTReasoning]:
     completion = client.beta.chat.completions.parse(
-        model="gpt-4o-2024-08-06",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "system",
@@ -38,15 +35,15 @@ def get_reasoning(prompt: str) -> Optional[CoTReasoning]:
 
 
 def print_reasoning(reasoning: Optional[CoTReasoning]) -> None:
-    if reasoning and reasoning.step_details:
-        for step in reasoning.step_details:
-            print(f"Step: {step.step}")
+    if reasoning and reasoning.reasoning_steps:
+        for step in reasoning.reasoning_steps:
+            print(f"{step.step}")
     else:
-        print("No steps available.")
+        print("No STEPS available.")
 
-    print(f"Final Output: {reasoning.final_output if reasoning else 'No output available.'}")
+    print(f"{reasoning.final_answer if reasoning else 'No ANSWER available.'}")
 
 
 if __name__ == "__main__":
-    prompt = "1 + 1?"
+    prompt = "1 + 1 ="
     print_reasoning(get_reasoning(prompt))

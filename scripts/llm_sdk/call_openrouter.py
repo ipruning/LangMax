@@ -1,9 +1,6 @@
 import os
 
-from dotenv import load_dotenv
 from openai import OpenAI
-
-load_dotenv()
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 YOUR_SITE_URL = "https://www.qkvlab.com"
@@ -27,4 +24,4 @@ completion = client.chat.completions.create(
         },
     ],
 )
-print(completion.choices[0].message.content)
+print(completion)

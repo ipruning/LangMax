@@ -1,9 +1,0 @@
-argmax
-   """Review: We had a great stay. Hiking in the mountains was fabulous and the food is really good.\n
-   Q: What is the underlying sentiment of this review and why?\n
-   A:[ANALYSIS]\n
-   Based on this, the overall sentiment of the message can be considered to be[CLASSIFICATION]"""
-from 
-   "openai/text-davinci-003"
-distribution
-   CLASSIFICATION in [" positive", " neutral", " negative"]

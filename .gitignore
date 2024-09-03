@@ -169,3 +169,4 @@ wandb/
 *.excalidraw.json
 *.private.env
 .sesskey
+scripts/prompt_exp/baml_client/

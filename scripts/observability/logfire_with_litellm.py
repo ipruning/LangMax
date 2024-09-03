@@ -1,8 +1,4 @@
 import litellm
-from dotenv import load_dotenv
-
-load_dotenv()
-
 
 litellm.callbacks = ["logfire"]
 
@@ -11,7 +7,7 @@ response = litellm.completion(
     messages=[
         {
             "role": "user",
-            "content": "Hi 👋 How are you?",
+            "content": "Hello, how are you?",
         },
     ],
 )

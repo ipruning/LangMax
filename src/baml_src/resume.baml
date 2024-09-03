@@ -1,4 +1,3 @@
-// Defining a data model.
 class Resume {
   name string
   email string
@@ -6,9 +5,8 @@ class Resume {
   skills string[]
 }
 
-// Creating a function to extract the resume from a string.
 function ExtractResume(resume: string) -> Resume {
-  client "openai/gpt-4o" // Set OPENAI_API_KEY to use this client.
+  client FastClaude
   prompt #"
     Extract from this content:
     {{ resume }}
@@ -17,7 +15,6 @@ function ExtractResume(resume: string) -> Resume {
   "#
 }
 
-// Testing the function with a sample resume.
 test vaibhav_resume {
   functions [ExtractResume]
   args {

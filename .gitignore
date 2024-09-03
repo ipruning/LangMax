@@ -160,13 +160,5 @@ cython_debug/
 .idea/
 
 # Custom
-.ruff_cache/
-TODO/
-data/
-llms/
-scripts/24q1/chatgpt-api-by-browser-script/
-wandb/
-*.excalidraw.json
-*.private.env
-.sesskey
-scripts/prompt_exp/baml_client/
+src/baml_client/
+scripts/tui/.sesskey

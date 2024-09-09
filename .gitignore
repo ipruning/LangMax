@@ -160,6 +160,8 @@ cython_debug/
 .idea/
 
 # Custom
-*/baml_client/
-*.sesskey
 *.db
+*.sesskey
+*/baml_client/
+.logfire/
+.ruff_cache/

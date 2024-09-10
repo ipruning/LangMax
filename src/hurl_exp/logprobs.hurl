@@ -11,7 +11,7 @@ Authorization: Bearer {{OPENAI_API_KEY}}
     },
     {
       "role": "user",
-      "content": "Hello!"
+      "content": "Hello! My name is "
     }
   ],
   "logprobs": true,

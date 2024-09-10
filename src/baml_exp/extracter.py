@@ -1,22 +1,18 @@
-from src.baml_client import b
-from src.baml_client.types import Resume
+import asyncio
 
-p = """Jason Doe
-Python, Rust
-University of California, Berkeley, B.S.
-in Computer Science, 2020
-Also an expert in Tableau, SQL, and C++
-"""
-r = b.ExtractResume(p)
+from baml_client import b
+from baml_client.types import Resume
 
-assert isinstance(r, Resume)
 
-print(r.name)
-print(r.email)
-print(r.experience)
-print(r.skills)
+async def main():
+    resume_text = """Jason Doe\nPython, Rust\nUniversity of California, Berkeley, B.S.\nin Computer Science, 2020\nAlso an expert in Tableau, SQL, and C++\n"""
 
-p = """I want to cancel my order"""
+    resume: Resume = await b.ExtractResume(resume_text)
 
-r = b.ClassifyMessage(p)
-print(r)
+    assert isinstance(resume, Resume)
+
+    print(resume)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

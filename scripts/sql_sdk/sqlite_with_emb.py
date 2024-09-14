@@ -10,7 +10,9 @@ def serialize_f32(vector: List[float]) -> bytes:
     return struct.pack("%sf" % len(vector), *vector)
 
 
-db = sqlite3.connect(":memory:")
+# Use a file-based database instead of in-memory
+db_file = "data/test_sqlite_vec.db"
+db = sqlite3.connect(db_file)
 db.enable_load_extension(True)
 sqlite_vec.load(db)
 db.enable_load_extension(False)
@@ -27,14 +29,20 @@ items = [
 ]
 query = [0.3, 0.3, 0.3, 0.3]
 
-db.execute("CREATE VIRTUAL TABLE vec_items USING vec0(embedding float[4])")
+# Check if the table already exists
+cursor = db.cursor()
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='vec_items'")
+table_exists = cursor.fetchone()
 
-with db:
-    for item in items:
-        db.execute(
-            "INSERT INTO vec_items(rowid, embedding) VALUES (?, ?)",
-            [item[0], serialize_f32(item[1])],
-        )
+if not table_exists:
+    db.execute("CREATE VIRTUAL TABLE vec_items USING vec0(embedding float[4])")
+
+    with db:
+        for item in items:
+            db.execute(
+                "INSERT INTO vec_items(rowid, embedding) VALUES (?, ?)",
+                [item[0], serialize_f32(item[1])],
+            )
 
 rows = db.execute(
     """
@@ -50,3 +58,8 @@ rows = db.execute(
 ).fetchall()
 
 print(rows)
+
+# Close the database connection
+db.close()
+
+print(f"Database persisted to {db_file}")

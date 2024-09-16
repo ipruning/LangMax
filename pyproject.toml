@@ -11,17 +11,20 @@
         "anthropic~=0.34.2",
         "baml-py==0.55.3",
         "banks~=0.6.0",
-        "bm25s~=0.1.10",
+        "bm25s~=0.2.0",
         "chromadb~=0.5.5",
+        "commitizen~=3.29.0",
         "fastapi[standard]>=0.114.2",
         "fire~=0.6.0",
         "google-generativeai~=0.8.1",
         "great-tables~=0.11.0",
         "httpx[socks]~=0.27.2",
         "jinja2~=3.1.4",
+        "lancedb>=0.13.0",
         "langchain~=0.3.0",
         "libsql-experimental>=0.0.40",
-        "litellm~=1.45.0",
+        "lingua-language-detector>=2.0.2",
+        "litellm~=1.46.0",
         "llama-cpp-python>=0.2.90",
         "llama-index~=0.11.9",
         "lmql~=0.7.3",
@@ -34,18 +37,21 @@
         "openai~=1.45.0",
         "pgvector>=0.3.3",
         "polars~=1.7.1",
-        "psycopg[binary]>=3.2.1",
+        "psycopg[binary]>=3.2.2",
+        "pyright~=1.1.380",
         "pystemmer>=2.2.0.1",
         "python-dotenv~=1.0.1",
-        "python-fasthtml~=0.5.3",
+        "python-fasthtml~=0.6.0",
         "rich~=13.8.1",
-        "sglang[openai]~=0.3.0",
+        "ruff~=0.6.5",
+        "sglang[openai]~=0.3.1",
         "sqlite-utils>=3.37",
         "sqlite-vec>=0.1.1",
+        "sqlmodel>=0.0.22",
         "tiktoken~=0.7.0",
         "transformers[torch]~=4.44.2",
         "wandb~=0.18.0",
-]
+    ]
 
 [tool.pyright]
     pythonVersion              = "3.12"
@@ -58,8 +64,7 @@
     venvPath                   = "."
 
 [tool.uv]
-    managed          = true
-    dev-dependencies = ["commitizen~=3.29.0", "pyright~=1.1.380", "ruff~=0.6.5"]
+    managed = true
 
 [tool.ruff]
     exclude = [

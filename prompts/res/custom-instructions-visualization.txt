@@ -1,7 +1,3 @@
-# Prompt
-
-## Claude
-
 <Misc>
 
 When you reply in Chinese, please follow the formatting rules below:

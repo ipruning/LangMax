@@ -7,7 +7,7 @@ def test_tiktoken_encoding():
     assert enc_base.decode(enc_base.encode("hello world")) == "hello world"
 
     # Test gpt-4o model encoding
-    enc_gpt4 = tiktoken.encoding_for_model("gpt-4o")
+    enc_gpt4 = tiktoken.encoding_for_model("gpt-4o-mini")
 
     # Test encoding and decoding
     encoded = enc_gpt4.encode("hello world")

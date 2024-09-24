@@ -22,6 +22,7 @@
         "html2text>=2024.2.26",
         "httpx[socks]~=0.27.2",
         "jinja2~=3.1.4",
+        "joblib>=1.4.2",
         "lancedb>=0.13.0",
         "langchain~=0.3.0",
         "libsql-experimental>=0.0.40",
@@ -54,7 +55,7 @@
         "tiktoken~=0.7.0",
         "transformers[torch]~=4.44.2",
         "wandb~=0.18.1",
-]
+    ]
 
 [tool.pyright]
     pythonVersion    = "3.12"
@@ -99,9 +100,8 @@
     target-version = "py312"
 
 [tool.ruff.lint]
-    select = ["A", "E", "F", "I", "N", "T100"]
-    ignore = ["E501"]
-
+    select    = ["A", "E", "F", "I", "N", "T100"]
+    ignore    = ["E501", "F401"]
     fixable   = ["ALL"]
     unfixable = []
 

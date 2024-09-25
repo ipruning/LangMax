@@ -96,12 +96,12 @@
         "venv",
     ]
     indent-width = 4
-    line-length = 120
+    line-length = 180
     target-version = "py312"
 
 [tool.ruff.lint]
     select    = ["A", "E", "F", "I", "N", "T100"]
-    ignore    = ["E501", "F401"]
+    ignore    = ["E501"]
     fixable   = ["ALL"]
     unfixable = []
 

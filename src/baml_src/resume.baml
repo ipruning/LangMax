@@ -6,7 +6,7 @@ class Resume {
 }
 
 function ExtractResume(resume: string) -> Resume {
-  client FastCerebras
+  client FastGPT
   prompt #"
     Extract from this content:
     {{ resume }}

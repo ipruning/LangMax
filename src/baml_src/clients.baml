@@ -1,21 +1,21 @@
-client<llm> FastCerebras {
-  provider openai
-  options {
-    model "llama3.1-8b"
-    api_key env.CEREBRAS_API_KEY
-    base_url "https://api.cerebras.ai/v1/"
-    temperature "1.0"
-    default_role "user"
-  }
-}
-
-// client<llm> FastGPT {
+// client<llm> FastCerebras {
 //   provider openai
 //   options {
-//     model "gpt-4o-mini"
-//     api_key env.OPENAI_API_KEY
+//     model "llama3.1-8b"
+//     api_key env.CEREBRAS_API_KEY
+//     base_url "https://api.cerebras.ai/v1/"
+//     temperature "1.0"
+//     default_role "user"
 //   }
 // }
+
+client<llm> FastGPT {
+  provider openai
+  options {
+    model "gpt-4o-mini"
+    api_key env.OPENAI_API_KEY
+  }
+}
 
 // client<llm> SmartGPT {
 //   provider openai

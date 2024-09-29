@@ -166,4 +166,5 @@ cython_debug/
 .logfire/
 .ruff_cache/
 data/
-cache/
+cachedir/
+logdir/

@@ -2,7 +2,7 @@ import time
 
 from joblib import Memory
 
-location = "./cache"
+location = "./cachedir"
 memory = Memory(location, verbose=0)
 
 

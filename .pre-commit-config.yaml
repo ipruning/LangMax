@@ -1,22 +1,30 @@
-default_install_hook_types: [commit-msg, pre-push]
+default_install_hook_types: [pre-commit, commit-msg, pre-push]
 default_stages: [commit, push]
 repos:
-  - repo: local
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
     hooks:
-      - id: format
-        name: Format using Ruff
-        entry: ruff format
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        name: Detect secrets
         language: python
-        types: [python]
-        pass_filenames: false
+        entry: detect-secrets-hook
+        args: ['--baseline', '.secrets.baseline']
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.29.0
+    hooks:
       - id: commitizen
-        name: Check commit message
-        entry: cz check
-        args: [--allow-abort, --commit-msg-file]
-        stages: [commit-msg]
-        language: python
-      - id: trufflehog
-        name: TruffleHog
-        entry: trufflehog git file://. --since-commit HEAD --only-verified --fail
-        language: system
-        pass_filenames: false
+      - id: commitizen-branch
+        stages:
+          - post-commit
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.1
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format

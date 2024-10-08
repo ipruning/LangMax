@@ -8,24 +8,29 @@
     readme = "README.md"
     requires-python = ">=3.12"
     dependencies = [
+        "autoevals>=0.0.94",
         "baml-py>=0.59.0",
+        "braintrust>=0.0.160",
         "google-generativeai>=0.8.3",
-        "instructor>=1.5.1",
+        "instructor>=1.5.2",
         "joblib>=1.4.2",
         "logfire>=1.0.1",
-        "marimo>=0.9.3",
+        "marimo>=0.9.4",
         "mlx-lm>=0.19.0",
-        "openai>=1.51.1",
+        "openai>=1.51.2",
         "pydantic>=2.9.2",
         "tokencost>=0.1.12",
-    ]
+]
 
 [tool.pyright]
-    pythonVersion        = "3.12"
-    venv                 = ".venv"
-    venvPath             = "."
-    typeCheckingMode     = "standard"
-    reportMissingImports = "information"
+    pythonVersion    = "3.12"
+    venv             = ".venv"
+    venvPath         = "."
+    typeCheckingMode = "standard"
+
+    reportMissingImports          = "information"
+    reportPossiblyUnboundVariable = "information"
+    reportRedeclaration           = "information"
 
 [tool.uv]
     managed = true
@@ -72,7 +77,7 @@
 
 [tool.ruff.lint]
     select    = ["A", "E", "F", "I", "N", "T100"]
-    ignore    = ["E501"]
+    ignore    = ["E501", "N807"]
     fixable   = ["ALL"]
     unfixable = []
 

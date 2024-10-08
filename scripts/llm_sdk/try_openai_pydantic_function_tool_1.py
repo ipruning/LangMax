@@ -4,6 +4,7 @@ from enum import Enum
 
 import openai
 from pydantic import BaseModel
+from rich import print
 
 client = openai.OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
@@ -24,19 +25,19 @@ class CardPrice(BaseModel):
     card_name: str
     currency: Currency
 
+    def get(self) -> float:
+        print(f"Getting the price of {self.card_name} in {self.currency}")
+        return 100.0
+
 
 class CardPopularity(BaseModel):
     """The parameters for the card popularity."""
 
     card_name: str
 
-
-def get_card_price(params: CardPrice) -> float:
-    return 100.0
-
-
-def get_card_popularity(params: CardPopularity) -> int:
-    return 50
+    def get(self) -> int:
+        print(f"Getting the popularity of {self.card_name}")
+        return 50
 
 
 messages: list[dict] = [
@@ -67,8 +68,8 @@ if message is not None:
 
     if tool_calls:
         function_map = {
-            "CardPrice": lambda args: get_card_price(CardPrice(**args)),
-            "CardPopularity": lambda args: get_card_popularity(CardPopularity(**args)),
+            "CardPrice": lambda args: CardPrice(**args).get(),
+            "CardPopularity": lambda args: CardPopularity(**args).get(),
         }
 
         for tool_call in tool_calls:

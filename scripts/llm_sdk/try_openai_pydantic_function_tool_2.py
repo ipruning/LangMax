@@ -6,56 +6,100 @@ from pydantic import BaseModel
 from rich import print
 
 
-class Table(str, Enum):
-    orders = "orders"
-    customers = "customers"
-    products = "products"
-
-
-class Column(str, Enum):
-    id = "id"
-    status = "status"
-    expected_delivery_date = "expected_delivery_date"
-    delivered_at = "delivered_at"
-    shipped_at = "shipped_at"
-    ordered_at = "ordered_at"
-    canceled_at = "canceled_at"
-
-
-class Operator(str, Enum):
-    eq = "="
-    gt = ">"
-    lt = "<"
-    le = "<="
-    ge = ">="
-    ne = "!="
-
-
-class OrderBy(str, Enum):
-    asc = "asc"
-    desc = "desc"
-
-
-class DynamicValue(BaseModel):
-    column_name: str
-
-
-class Condition(BaseModel):
-    column: str
-    operator: Operator
-    value: Union[str, int, DynamicValue]
-
-
 class Query(BaseModel):
+    """
+    A class to represent a database query.
+
+    Attributes:
+    ----------
+    table_name : Table
+        The name of the table to query.
+    columns : List[Column]
+        The columns to select in the query.
+    conditions : List[Condition]
+        The conditions to apply to the query.
+    order_by : OrderBy
+        The order in which to sort the results.
+    """
+
+    class Table(str, Enum):
+        """Enum to represent the table names."""
+
+        orders = "orders"
+        customers = "customers"
+        products = "products"
+
     table_name: Table
+
+    class Column(str, Enum):
+        """Enum to represent the column names."""
+
+        id = "id"
+        status = "status"
+        expected_delivery_date = "expected_delivery_date"
+        delivered_at = "delivered_at"
+        shipped_at = "shipped_at"
+        ordered_at = "ordered_at"
+        canceled_at = "canceled_at"
+
     columns: List[Column]
+
+    class Condition(BaseModel):
+        """
+        A class to represent a condition in the query.
+
+        Attributes:
+        ----------
+        column : str
+            The column to apply the condition to.
+        operator : Operator
+            The operator to use in the condition.
+        value : Union[str, int, DynamicValue]
+            The value to compare the column to.
+        """
+
+        column: str
+
+        class Operator(str, Enum):
+            """Enum to represent the operators for conditions."""
+
+            eq = "="
+            gt = ">"
+            lt = "<"
+            le = "<="
+            ge = ">="
+            ne = "!="
+
+        operator: Operator
+
+        class DynamicValue(BaseModel):
+            """
+            A class to represent a dynamic value in the condition.
+
+            Attributes:
+            ----------
+            column_name : str
+                The name of the column to use as the value.
+            """
+
+            column_name: str
+
+        value: Union[str, int, DynamicValue]
+
     conditions: List[Condition]
+
+    class OrderBy(str, Enum):
+        """Enum to represent the order by options."""
+
+        asc = "asc"
+        desc = "desc"
+
     order_by: OrderBy
 
 
 client = openai.OpenAI()
 completion = client.beta.chat.completions.parse(
-    model="gpt-4o-2024-08-06",
+    model="gpt-4o-mini",
     messages=[
         {
             "role": "system",

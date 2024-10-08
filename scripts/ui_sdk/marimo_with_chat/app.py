@@ -14,6 +14,7 @@ app = marimo.App()
 @app.cell
 def __():
     import marimo as mo
+
     return (mo,)
 
 

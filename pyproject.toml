@@ -8,23 +8,24 @@
     readme = "README.md"
     requires-python = ">=3.12"
     dependencies = [
-        "baml-py>=0.57.0",
-        "google-generativeai>=0.8.2",
+        "baml-py>=0.59.0",
+        "google-generativeai>=0.8.3",
+        "instructor>=1.5.1",
         "joblib>=1.4.2",
-        "logfire>=0.55.0",
-        "marimo>=0.8.22",
-        "openai>=1.50.2",
+        "logfire>=1.0.1",
+        "marimo>=0.9.3",
+        "mlx-lm>=0.19.0",
+        "openai>=1.51.1",
         "pydantic>=2.9.2",
-
+        "tokencost>=0.1.12",
     ]
 
 [tool.pyright]
-    pythonVersion = "3.12"
-    venv          = ".venv"
-    venvPath      = "."
-
+    pythonVersion        = "3.12"
+    venv                 = ".venv"
+    venvPath             = "."
     typeCheckingMode     = "standard"
-    reportMissingImports = false
+    reportMissingImports = "information"
 
 [tool.uv]
     managed = true
@@ -33,7 +34,7 @@
     dev-dependencies = [
         "commitizen>=3.29.1",
         "httpx[socks]>=0.27.2",
-        "ruff~=0.6.8",
+        "ruff~=0.6.9",
     ]
 
 [tool.ruff]

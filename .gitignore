@@ -160,11 +160,13 @@ cython_debug/
 .idea/
 
 # Custom
+.logfire/
+.ruff_cache/
 *.db
 *.sesskey
 */baml_client/
-.logfire/
-.ruff_cache/
-data/
 cachedir/
+data/
 logdir/
+src/artifact_exp/
+src/chainforge_exp/

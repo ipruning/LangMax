@@ -1,8 +1,5 @@
-[tools]
-  python = "3.12"
-
 [settings]
-  env_file = '.env'
+  env_file = ".env"
 
 [env]
   _.python.venv = ".venv"

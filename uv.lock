@@ -114,7 +114,7 @@ wheels = [
 
 [[package]]
 name = "autoevals"
-version = "0.0.94"
+version = "0.0.95"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "braintrust-core" },
@@ -123,28 +123,28 @@ dependencies = [
     { name = "levenshtein" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1a/40/41fc7ef555b193c2762b92690633411c6a09010b014deee11815742afdc8/autoevals-0.0.94.tar.gz", hash = "sha256:9129170e6e7d32dfbf55dd51718fe4ee26bb82f29c196a872feabec23b312a6c", size = 32831 }
+sdist = { url = "https://files.pythonhosted.org/packages/ad/f2/2b5ff0d2965f7cc6c3816cd1beb487aa2c19b50643b01f8b16400f0ca966/autoevals-0.0.95.tar.gz", hash = "sha256:6e41aa4d5e9ea9616250b58dc55e3ab8e4c293361113fcc7e4464252b3f46e3a", size = 32888 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8e/55/75c473482dab68296465e022556b00e4a400c7e2b1c3d9ab102fe80f8c74/autoevals-0.0.94-py3-none-any.whl", hash = "sha256:97d91b61c58573c8e86512a39831bd96adcee03efab8360ad049922286a85e7b", size = 36935 },
+    { url = "https://files.pythonhosted.org/packages/1d/16/6842773965ba120462672ca43b42aa1bb9c1ce8d866bfa348155a030b72d/autoevals-0.0.95-py3-none-any.whl", hash = "sha256:9f48afb34e8e5b38cce95e1d7537eaf0a3e525bde12a85c1369a71dbbf273989", size = 36938 },
 ]
 
 [[package]]
 name = "baml-py"
-version = "0.59.0"
+version = "0.60.0"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/03/51985b2b3d0fec1bb4105c099d97fb05609aef2cd7c7170d2734aefc933f/baml_py-0.59.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:d041162aa7ba9358454eb572358f0e07b84791f17598efaa74800edc532f9e85", size = 8960063 },
-    { url = "https://files.pythonhosted.org/packages/21/69/5eff86412c5ca71f558a62e26b0fa6d8ddcfadb3765d458d10e2ca60abb8/baml_py-0.59.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:fda6ea905ebd40aaabb631d30bcb03f66e6c1c0b6fc7893cf5abf4e5a463976c", size = 8323407 },
-    { url = "https://files.pythonhosted.org/packages/f9/0b/2b21da1b9ed0166fd94c81e8a6003a3e05221e2f07874a966077db71dd61/baml_py-0.59.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0b7eff48e002dc3f19c6378109bc05866e24b6f866375485db9762a5aac72403", size = 11311258 },
-    { url = "https://files.pythonhosted.org/packages/e3/91/c2238a34c6e77ff5c18989aadc5f3e2b1be097b931d6292f43018d9dde46/baml_py-0.59.0-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:333bbb89c3f06a774f9105f2b09f20d358c7dd311c3520d9d57bd8842934a5fe", size = 11423718 },
-    { url = "https://files.pythonhosted.org/packages/0f/05/61bd9f6921837ee6d340008761bcd24422788bd3f890d0ef6941dc4489ed/baml_py-0.59.0-cp38-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:b9bd57bdeb8ea5f5d0d70630444ae6ba0700c0b54fbe74e70c111b30dcac7b7b", size = 11598505 },
-    { url = "https://files.pythonhosted.org/packages/8f/d7/76084731bf74cc7319ce06a4149060c09f79eecb4f3077d008f6b1e26151/baml_py-0.59.0-cp38-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:844ab58e3e3249d0c531eb092e6a9c13366abd6e97664446f03c1d719f17358d", size = 11331793 },
-    { url = "https://files.pythonhosted.org/packages/30/96/fd7b295a505396c142f7371ca0b9498c86e8f0f373c250c1e39f9fafe2fe/baml_py-0.59.0-cp38-abi3-win_amd64.whl", hash = "sha256:64e6781a529b7765c5545addb3f4b2cbed9c74727965578b36c29a7cc74f5d7f", size = 9137790 },
+    { url = "https://files.pythonhosted.org/packages/e3/01/27b803151d7cb897479dc585abed415f9de85021f014ea4657be50d41182/baml_py-0.60.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:b3607868ace0aadeab543357e7b4e403a8f66d884d9c3237baadc54881260d12", size = 8872989 },
+    { url = "https://files.pythonhosted.org/packages/ec/79/cd19a1eb5d484c5c1d390372f554c55844479ef8db0e0a3c0eaa308e4be4/baml_py-0.60.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:af344a3c5389aad0a624388ec66fefd3ea18c12f761601648bb3476be94b1dd1", size = 8312054 },
+    { url = "https://files.pythonhosted.org/packages/da/7b/ddf7b464d0750a5b86417f00138e73f7a474bd2961c734b3c5258fe91b9e/baml_py-0.60.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d232c9b976697a6ed4ed8944d64a0cd3c876da18db6dd244dc536be2d0119b78", size = 11294890 },
+    { url = "https://files.pythonhosted.org/packages/9e/65/ed6181393f9f0fc3e2108a921a9a1a5e12597760661b55a56995c74b8b6d/baml_py-0.60.0-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:3173ac812e5c00238a0a56432b467c350d67bd3332baa1eccb19af1aeb4ab080", size = 11399574 },
+    { url = "https://files.pythonhosted.org/packages/b6/e9/1c48323747cc2ed86670a1ce7aef8f483389e08d854455e2c210515233bf/baml_py-0.60.0-cp38-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:6f7a814aea5c7dc165b1a5e6bacadbcf7b3b9f185bac6ce1c2bcc9ff628c1e7e", size = 11643540 },
+    { url = "https://files.pythonhosted.org/packages/a3/43/099a9faa7d72310033b12129ebf6c8d1adf871eed9d1cb7c7022873113dc/baml_py-0.60.0-cp38-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:ef5352b6034c2bd8cbc427ea940404e73466b45f09488a06834ecf1bdb28c4f3", size = 11293279 },
+    { url = "https://files.pythonhosted.org/packages/45/fe/27b4e07b38d4bce7fa28473a6b0de0f507f428c4cc04d7e6ec03da7ee2da/baml_py-0.60.0-cp38-abi3-win_amd64.whl", hash = "sha256:801886d648019f0c637668a6bad090ebabbb6fcacc35aee6e878f219b716e619", size = 9112010 },
 ]
 
 [[package]]
 name = "braintrust"
-version = "0.0.160"
+version = "0.0.162"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "braintrust-core" },
@@ -156,9 +156,9 @@ dependencies = [
     { name = "sseclient-py" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/be/1e/fa5064a66fbe387f681aa7bbcf2d0477138e214f216def42e9b6b1b2bed9/braintrust-0.0.160.tar.gz", hash = "sha256:2999afbe7037187002b096b728a35501e03acb27a77e10d10a1e3411f151cb7e", size = 73065 }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/e7/7609ee7396e717ac0dce83caa8ea1712cfab8b55e260641baee7cf6fb425/braintrust-0.0.162.tar.gz", hash = "sha256:c6d139a73f87a7e9e9ba1959f1ea12491238c5d090dccc16084e794092ce29f5", size = 73355 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/f1/32c9945a01970bdfb17bdacc0e28a55aab3cb7031088c4dd3a87ed090a91/braintrust-0.0.160-py3-none-any.whl", hash = "sha256:f4ad269fa022b6dd6b5dbcc828b65cfffaa8cc1b636c2a820fd9eacb3a5cfc57", size = 84386 },
+    { url = "https://files.pythonhosted.org/packages/80/79/f093e54fbc76b0e1be066fa5cea41b32d887ae5192ac9f3dccd0aaa4d8f2/braintrust-0.0.162-py3-none-any.whl", hash = "sha256:a45fe2168f98ca0dec0cb8a2dd9470e74229df63f6652b7c0301478e276152f3", size = 84629 },
 ]
 
 [[package]]
@@ -776,14 +776,14 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "autoevals", specifier = ">=0.0.94" },
-    { name = "baml-py", specifier = ">=0.59.0" },
-    { name = "braintrust", specifier = ">=0.0.160" },
+    { name = "autoevals", specifier = ">=0.0.95" },
+    { name = "baml-py", specifier = ">=0.60.0" },
+    { name = "braintrust", specifier = ">=0.0.162" },
     { name = "google-generativeai", specifier = ">=0.8.3" },
     { name = "instructor", specifier = ">=1.5.2" },
     { name = "joblib", specifier = ">=1.4.2" },
     { name = "logfire", specifier = ">=1.0.1" },
-    { name = "marimo", specifier = ">=0.9.4" },
+    { name = "marimo", specifier = ">=0.9.6" },
     { name = "mlx-lm", specifier = ">=0.19.0" },
     { name = "openai", specifier = ">=1.51.2" },
     { name = "pydantic", specifier = ">=2.9.2" },
@@ -856,7 +856,7 @@ wheels = [
 
 [[package]]
 name = "marimo"
-version = "0.9.4"
+version = "0.9.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -864,6 +864,7 @@ dependencies = [
     { name = "itsdangerous" },
     { name = "jedi" },
     { name = "markdown" },
+    { name = "narwhals" },
     { name = "packaging" },
     { name = "psutil" },
     { name = "pygments" },
@@ -875,9 +876,9 @@ dependencies = [
     { name = "uvicorn" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3c/aa/ac1327c17b3560854701bd5e638325e8e6ab0d39b28b53fe57e609d0b521/marimo-0.9.4.tar.gz", hash = "sha256:458a0d208a817b1c0f2f293b67df0a044f8a6fd8e64faa476d92fb71f4fdb545", size = 11376216 }
+sdist = { url = "https://files.pythonhosted.org/packages/29/bc/45a6b3cda853428ddc61efa1d15044dd69e59146540135c750b31519bf3e/marimo-0.9.6.tar.gz", hash = "sha256:645a909d5b5e9b268bc3da950da3558fe6df5476637b23276a3452bef817f864", size = 11644702 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/22/caa18d2c4b78a413189d3f9053e8f0c495fc97e774cb4d70677861e21326/marimo-0.9.4-py3-none-any.whl", hash = "sha256:309a3c6a673c399cffab876cb77ee4624e02e3317d21337ba0a405680585700f", size = 11667973 },
+    { url = "https://files.pythonhosted.org/packages/39/c3/035f38611c682a210e088d6b708631dfccaa8d67ff32c7a184352e4e18e4/marimo-0.9.6-py3-none-any.whl", hash = "sha256:fa0e0527f99a2b38c5c5d83aac7e92a10ad5384da01d0bb0a332e883ba5cbe01", size = 11942130 },
 ]
 
 [[package]]
@@ -935,6 +936,7 @@ source = { registry = "https://pypi.org/simple" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ac/e6/032f43927bec91dcb4fa5d149904e8b409619046c99f11433ad71d2731a2/mlx-0.18.0-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:dc83a7dabb8472d21dabd1b8959bc6598d800cdbb0e29da810dc2f57737a90b6", size = 21846576 },
     { url = "https://files.pythonhosted.org/packages/3f/4c/c82dcb57198901034a0096cfd976f3c3e27ecc94b4b7faee4371d031c412/mlx-0.18.0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:5f62be12a374a0a71e5bf015a5d578db8237c0451720a3f9cb8c437a829139e0", size = 21103092 },
+    { url = "https://files.pythonhosted.org/packages/51/05/7891bddf5bab572bc49a16a6654e693daad3b7a864627e84a1a7a6b3143e/mlx-0.18.0-cp312-cp312-manylinux_2_31_x86_64.whl", hash = "sha256:c052951d26e785f686029c5d13ceecff18382dbe40b8d05f06fdfde7583cca31", size = 12743729 },
 ]
 
 [[package]]
@@ -991,6 +993,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/38/e0/4f5855037a72cd8a7a2f60a3952d9aa45feedb37ae7831642102604e8a37/multidict-6.1.0-cp313-cp313-win32.whl", hash = "sha256:3a37ffb35399029b45c6cc33640a92bef403c9fd388acce75cdc88f58bd19a81", size = 26426 },
     { url = "https://files.pythonhosted.org/packages/7e/a5/17ee3a4db1e310b7405f5d25834460073a8ccd86198ce044dfaf69eac073/multidict-6.1.0-cp313-cp313-win_amd64.whl", hash = "sha256:e9aa71e15d9d9beaad2c6b9319edcdc0a49a43ef5c0a4c8265ca9ee7d6c67774", size = 28531 },
     { url = "https://files.pythonhosted.org/packages/99/b7/b9e70fde2c0f0c9af4cc5277782a89b66d35948ea3369ec9f598358c3ac5/multidict-6.1.0-py3-none-any.whl", hash = "sha256:48e171e52d1c4d33888e529b999e5900356b9ae588c2f09a52dcefb158b27506", size = 10051 },
+]
+
+[[package]]
+name = "narwhals"
+version = "1.9.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/57/b9/f9861a88f9b2e4e8ba70ae5ce42209502db01c98c4740bca0c489543102d/narwhals-1.9.2.tar.gz", hash = "sha256:f5b02ec2ff3f5a668719a01e8d434b3fa100fbf1f4fb0d0653202b5c31695c9a", size = 153645 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9c/45/42e78291a4471963741f113277b4cddb4063af6c793d191b6429036ef73f/narwhals-1.9.2-py3-none-any.whl", hash = "sha256:9cb9a9a384cd7547e022f9601512c93f8bd784ab6cf55cc5fa76f724bb014989", size = 185075 },
 ]
 
 [[package]]

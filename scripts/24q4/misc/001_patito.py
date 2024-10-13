@@ -20,6 +20,4 @@ invalid_product_df = pl.DataFrame(
     }
 )
 
-print(invalid_product_df)
-
 Product.validate(invalid_product_df)

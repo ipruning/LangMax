@@ -22,3 +22,9 @@ repos:
       - id: commitizen-branch
         stages:
           - post-commit
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.1
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format

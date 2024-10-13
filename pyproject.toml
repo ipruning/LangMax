@@ -8,17 +8,18 @@
     readme = "README.md"
     requires-python = ">=3.12, <3.13"
     dependencies = [
-        "autoevals>=0.0.95",
+        "autoevals>=0.0.96",
         "baml-py>=0.60.0",
-        "braintrust>=0.0.162",
+        "braintrust>=0.0.163",
         "google-generativeai>=0.8.3",
         "instructor>=1.5.2",
         "joblib>=1.4.2",
         "logfire>=1.0.1",
-        "marimo>=0.9.6",
+        "marimo>=0.9.8",
         "mlx-lm>=0.19.0",
         "openai>=1.51.2",
-        "pydantic>=2.9.2",
+        "patito>=0.7.0",
+        "polars[numpy,openpyxl,pandas,pydantic,sqlalchemy]>=1.9.0",
         "tokencost>=0.1.12",
     ]
 

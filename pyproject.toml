@@ -8,18 +8,16 @@
     readme = "README.md"
     requires-python = ">=3.12, <3.13"
     dependencies = [
-        "autoevals>=0.0.96",
-        "baml-py>=0.60.0",
-        "boto3>=1.35.39",
-        "braintrust>=0.0.163",
-        "duckdb>=1.1.1",
-        "google-generativeai>=0.8.3",
-        "instructor>=1.5.2",
+        "autoevals>=0.0.97",
+        "baml-py>=0.61.1",
+        "braintrust>=0.0.164",
+        "httpx>=0.27.2",
+        "instructor[anthropic,google-generativeai]>=1.5.2",
         "jinja2>=3.1.4",
         "joblib>=1.4.2",
-        "logfire>=1.0.1",
-        "marimo>=0.9.9",
-        "mlx-lm>=0.19.0",
+        "logfire>=1.1.0",
+        "marimo>=0.9.10",
+        "mlx-lm>=0.19.1",
         "openai>=1.51.2",
         "pandera>=0.20.4",
         "patito>=0.7.0",
@@ -39,7 +37,7 @@
 [tool.uv]
     managed          = true
     package          = true
-    dev-dependencies = ["httpx[socks]>=0.27.2", "ruff~=0.6.9"]
+    dev-dependencies = ["grpcio<1.67.0", "httpx[socks]>=0.27.2", "ruff~=0.6.9"]
 
 [tool.ruff]
     exclude = [
@@ -71,7 +69,7 @@
         "venv",
     ]
     indent-width = 4
-    line-length = 180
+    line-length = 120
     target-version = "py312"
 
 [tool.ruff.lint]

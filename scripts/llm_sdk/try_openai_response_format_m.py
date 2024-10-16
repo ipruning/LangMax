@@ -4,7 +4,7 @@ from enum import Enum
 
 from openai import OpenAI
 from pydantic import BaseModel
-from rich import print
+from rich.console import Console
 
 client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
@@ -12,24 +12,23 @@ client = OpenAI(
 )
 
 
-class SearchType(str, Enum):
-    VIDEO = "video"
-    EMAIL = "email"
-    MISC = "misc"
-
-
 class Search(BaseModel):
-    search_query: str
-    search_type: SearchType
+    class Backend(str, Enum):
+        VIDEO = "video"
+        EMAIL = "email"
+        MISC = "misc"
+
+    query: str
+    backend: Backend
 
     async def execute(self) -> str:
-        return f"Burrrrr {self.search_query} {self.search_type}"
+        return f"Burrrrr {self.query} {self.backend}"
 
 
 class MultiSearch(BaseModel):
     searches: list[Search]
 
-    async def execute(self):
+    async def execute(self) -> list[str]:
         return await asyncio.gather(*[search.execute() for search in self.searches])
 
 
@@ -51,11 +50,17 @@ def segment_searches(data: str) -> MultiSearch:
     return completion.choices[0].message.parsed
 
 
-async def execute_searches(multi_search: MultiSearch) -> list[str]:
-    return await multi_search.execute()
+query = """Hi,
+I am looking for a video on how to cook a pizza.
+I am also looking for an email on how to cook a pizza.
+我还想学游戏王
+"""
+
+output = segment_searches(query)
 
 
-if __name__ == "__main__":
-    query = "I am looking for a video on how to cook a pizza. I am also looking for an email on how to cook a pizza. 我还想学习游戏王的卡组怎么组。"
-    multi_search = segment_searches(query)
-    print(asyncio.run(execute_searches(multi_search)))
+console = Console()
+console.print("Segmented Searches:", style="bold")
+console.print(output)
+console.print("Search Execution Results:", style="bold")
+console.print(asyncio.run(output.execute()))

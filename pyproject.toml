@@ -19,8 +19,6 @@
         "marimo>=0.9.10",
         "mlx-lm>=0.19.1",
         "openai>=1.51.2",
-        "pandera>=0.20.4",
-        "patito>=0.7.0",
         "polars[numpy, openpyxl, pandas, pydantic, pyarrow, sqlalchemy]>=1.9.0",
         "tokencost>=0.1.12",
     ]
@@ -33,11 +31,18 @@
     reportMissingImports          = "information"
     reportPossiblyUnboundVariable = "information"
     reportRedeclaration           = "information"
+    reportUnusedExpression        = "information"
 
 [tool.uv]
-    managed          = true
-    package          = true
-    dev-dependencies = ["grpcio<1.67.0", "httpx[socks]>=0.27.2", "ruff~=0.6.9"]
+    dev-dependencies = [
+        "grpcio<1.67.0",
+        "httpx[socks]>=0.27.2",
+        "ruff~=0.6.9",
+        "pandera>=0.20.4",
+        "patito>=0.7.0",
+    ]
+    managed = true
+    package = true
 
 [tool.ruff]
     exclude = [
@@ -74,7 +79,7 @@
 
 [tool.ruff.lint]
     select    = ["A", "E", "F", "I", "N", "T100"]
-    ignore    = []
+    ignore    = ["E501", "N807"]
     fixable   = ["ALL"]
     unfixable = []
 

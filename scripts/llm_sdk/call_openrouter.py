@@ -1,8 +1,7 @@
-import json
 import os
 
-import requests
 from openai import OpenAI
+from rich import print
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 YOUR_SITE_URL = "https://www.qkvlab.com"
@@ -27,22 +26,18 @@ completion = client.chat.completions.create(
     ],
 )
 
-# print(completion)
+print(completion)
 
-response = requests.post(
-    url="https://openrouter.ai/api/v1/chat/completions",
-    headers={
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": f"{YOUR_SITE_URL}",
-        "X-Title": f"{YOUR_APP_NAME}",
-    },
-    data=json.dumps(
+completion = client.chat.completions.create(
+    model="google/gemini-flash-1.5",
+    messages=[
         {
-            "model": "google/gemini-flash-1.5",
-            "messages": [{"role": "user", "content": "What is the meaning of life?"}],
-            "stream": True,
-        }
-    ),
+            "role": "user",
+            "content": "Say this is a test",
+        },
+    ],
+    stream=True,
 )
 
-print(response.json())
+for chunk in completion:
+    print(chunk.choices[0].delta.content)

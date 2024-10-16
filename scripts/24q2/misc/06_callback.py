@@ -1,9 +1,12 @@
-def callback(n):
-    print("Sum = {}".format(n))
+from typing import Callable, Optional
 
 
-def main(a, b, _callback=None):
-    print("adding {} + {}".format(a, b))
+def callback(n: int) -> None:
+    print(f"Sum = {n}")
+
+
+def main(a: int, b: int, _callback: Optional[Callable[[int], None]] = None) -> None:
+    print(f"adding {a} + {b}")
     if _callback:
         _callback(a + b)
 

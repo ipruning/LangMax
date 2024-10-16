@@ -1,9 +1,0 @@
-beam(n=3)
-    """Chinese to English Translation:
-    Chinese: 她每天都不吃早饭。
-    English: [TRANSLATION]
-    """
-from 
-    lmql.model("local:llama.cpp:/Users/alex/Databases/Models/lm-studio/models/lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf")
-where
-    STOPS_AT(TRANSLATION, "\n")

@@ -28,10 +28,7 @@
     venvPath         = "."
     typeCheckingMode = "standard"
 
-    reportMissingImports          = "information"
-    reportPossiblyUnboundVariable = "information"
-    reportRedeclaration           = "information"
-    reportUnusedExpression        = "information"
+    reportMissingImports = "information"
 
 [tool.uv]
     dev-dependencies = [
@@ -79,7 +76,7 @@
 
 [tool.ruff.lint]
     select    = ["A", "E", "F", "I", "N", "T100"]
-    ignore    = ["E501", "N807"]
+    ignore    = ["E501"]
     fixable   = ["ALL"]
     unfixable = []
 

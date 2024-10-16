@@ -164,9 +164,9 @@ cython_debug/
 .ruff_cache/
 *.db
 *.sesskey
+*/artifacts/
 */baml_client/
+*/cforges/
 cachedir/
 data/
 logdir/
-src/artifact_exp/
-src/chainforge_exp/

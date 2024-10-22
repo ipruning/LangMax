@@ -1,3 +1,4 @@
+import os
 import re
 from typing import List
 
@@ -5,7 +6,7 @@ import requests
 from openai import OpenAI
 from tiktoken import encoding_for_model
 
-OLLAMA_API_KEY = "ollama"
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
 OLLAMA_API_BASE_URL = "http://localhost:11434/v1/"
 OLLAMA_MODEL = "reader-lm:1.5b"
 

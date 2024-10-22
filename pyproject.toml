@@ -76,7 +76,7 @@
 
 [tool.ruff.lint]
     select    = ["A", "E", "F", "I", "N", "T100"]
-    ignore    = ["E501"]
+    ignore    = ["E501", "N807"]
     fixable   = ["ALL"]
     unfixable = []
 

@@ -8,19 +8,19 @@
     readme = "README.md"
     requires-python = ">=3.12, <3.13"
     dependencies = [
-        "autoevals>=0.0.97",
-        "baml-py>=0.61.1",
-        "braintrust>=0.0.164",
+        "autoevals>=0.0.99",
+        "baml-py>=0.62.0",
+        "braintrust>=0.0.166",
         "httpx>=0.27.2",
-        "instructor[anthropic,google-generativeai]>=1.5.2",
+        "instructor[anthropic,google-generativeai]>=1.6.3",
         "jinja2>=3.1.4",
         "joblib>=1.4.2",
-        "logfire>=1.1.0",
-        "marimo>=0.9.10",
+        "logfire>=1.2.0",
+        "marimo>=0.9.11",
         "mlx-lm>=0.19.1",
-        "openai>=1.51.2",
-        "polars[numpy, openpyxl, pandas, pydantic, pyarrow, sqlalchemy]>=1.9.0",
-        "tokencost>=0.1.12",
+        "openai>=1.52.0",
+        "polars[numpy, openpyxl, pandas, pydantic, pyarrow, sqlalchemy]>=1.10.0",
+        "tokencost>=0.1.14",
     ]
 
 [tool.pyright]
@@ -34,9 +34,9 @@
     dev-dependencies = [
         "grpcio<1.67.0",
         "httpx[socks]>=0.27.2",
-        "ruff~=0.6.9",
+        "ruff~=0.7.0",
         "pandera>=0.20.4",
-        "patito>=0.7.0",
+        "patito>=0.8.0",
     ]
     managed = true
     package = true

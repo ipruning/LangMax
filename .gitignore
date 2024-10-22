@@ -160,13 +160,14 @@ cython_debug/
 .idea/
 
 # Custom
-.logfire/
-.ruff_cache/
 *.db
 *.sesskey
+*.env
 */artifacts/
 */baml_client/
 */cforges/
+.logfire/
+.ruff_cache/
 cachedir/
 data/
 logdir/

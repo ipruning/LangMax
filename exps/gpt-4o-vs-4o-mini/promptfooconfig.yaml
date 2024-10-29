@@ -7,12 +7,12 @@ description: "My eval"
 prompts:
   - "Write a tweet about {{topic}}"
   - "Write a concise, funny tweet about {{topic}}"
-  
+
 
 providers:
   - "openai:gpt-4o-mini"
   - "openai:gpt-4o"
-  
+
 
 tests:
   - vars:

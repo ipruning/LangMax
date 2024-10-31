@@ -62,7 +62,7 @@ career
 
 ```
 ## Source: local data frame [9,256 x 4]
-## 
+##
 ##                 name     H    AB average
 ##                (chr) (int) (int)   (dbl)
 ## 1         Hank Aaron  3771 12364  0.3050
@@ -236,7 +236,7 @@ coef(m)
 ```
 
 ```
-## alpha  beta 
+## alpha  beta
 ##    75   222
 ```
 

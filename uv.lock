@@ -812,7 +812,8 @@ dependencies = [
     { name = "braintrust" },
     { name = "datasets" },
     { name = "einops" },
-    { name = "httpx" },
+    { name = "grpcio" },
+    { name = "httpx", extra = ["socks"] },
     { name = "instructor", extra = ["anthropic", "google-generativeai"] },
     { name = "jinja2" },
     { name = "joblib" },
@@ -821,19 +822,13 @@ dependencies = [
     { name = "mcp" },
     { name = "mflux" },
     { name = "openai" },
+    { name = "pandera" },
+    { name = "patito" },
     { name = "polars", extra = ["numpy", "openpyxl", "pandas", "pyarrow", "pydantic", "sqlalchemy"] },
+    { name = "ruff" },
     { name = "timm" },
     { name = "tokencost" },
     { name = "torchvision" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "grpcio" },
-    { name = "httpx", extra = ["socks"] },
-    { name = "pandera" },
-    { name = "patito" },
-    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -843,7 +838,8 @@ requires-dist = [
     { name = "braintrust", specifier = ">=0.0.173" },
     { name = "datasets", specifier = ">=3.1.0" },
     { name = "einops", specifier = ">=0.8.0" },
-    { name = "httpx", specifier = ">=0.27.2" },
+    { name = "grpcio", specifier = ">=1.68.0" },
+    { name = "httpx", extras = ["socks"], specifier = ">=0.27.2" },
     { name = "instructor", extras = ["anthropic", "google-generativeai"], specifier = ">=1.6.4" },
     { name = "jinja2", specifier = ">=3.1.4" },
     { name = "joblib", specifier = ">=1.4.2" },
@@ -852,19 +848,13 @@ requires-dist = [
     { name = "mcp", specifier = ">=1.0.0" },
     { name = "mflux", specifier = ">=0.4.1" },
     { name = "openai", specifier = ">=1.55.1" },
+    { name = "pandera", specifier = ">=0.21.0" },
+    { name = "patito", specifier = ">=0.8.2" },
     { name = "polars", extras = ["numpy", "openpyxl", "pandas", "pydantic", "pyarrow", "sqlalchemy"], specifier = ">=1.15.0" },
+    { name = "ruff", specifier = "~=0.8.0" },
     { name = "timm", specifier = ">=1.0.11" },
     { name = "tokencost", specifier = ">=0.1.17" },
     { name = "torchvision", specifier = ">=0.20.1" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "grpcio", specifier = ">=1.68.0" },
-    { name = "httpx", extras = ["socks"], specifier = ">=0.27.2" },
-    { name = "pandera", specifier = ">=0.21.0" },
-    { name = "patito", specifier = ">=0.8.2" },
-    { name = "ruff", specifier = "~=0.8.0" },
 ]
 
 [[package]]
